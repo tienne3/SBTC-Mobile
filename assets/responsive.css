@@ -1,0 +1,285 @@
+/* mobile */
+@media (max-width: 46.1875em) {
+    #header {
+        overflow: hidden;
+    }
+    .header__logo-img {
+        margin-left: -230px;
+        width: 1080px;
+        height: 35px;
+    }
+    .nav__bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px;
+        padding: 0 10px;
+        margin: 10px 0 0;
+    }
+    .logo-nguyenkim {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    .header__input {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-left: 10px;
+        float: left;
+    }
+    .seacrhInput {
+        border-radius: 8px;
+    }
+    .gioHang {
+        float: right;
+        margin: 10px 0;
+    }
+    .header__hotline {
+        display: none;
+    }
+
+    .show-img {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .header__video {
+        border-top: 10px solid #000;
+        border-bottom: 10px solid #000;
+    }
+    .change-img {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+
+    .accordion__last {
+        display: none;
+    }
+    #soDTduochien {
+        margin-top: 20px;
+    }
+    html .list__item-icon {
+        margin-top: 20px;
+        color: #fff;
+        display: block !important;
+        position: absolute;
+        padding: 11px 20px 10px 14px;
+        font-size: 2.4rem;
+    }
+
+    #container {
+        padding: 0 10px;
+    }
+    #cottrai {
+        height: 100%;
+        display: none;
+        position: fixed;
+        width: 65%;
+        top: 0;
+        left: 0;
+        background-color: #d6ecfa;
+        animation: cottraiFadeIn ease .3s;
+    }
+    @keyframes cottraiFadeIn {
+        from {
+            opacity: 0.4;
+            transform: translateX(-140px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    #accordion .ct label {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        margin: 4px 0 8px 30px;
+    }
+    #accordion .cap {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        padding: 14px 14px 10px;
+        color: var(--primary2);
+        cursor: pointer;
+        height: 30px;
+    }
+
+    #cotphai {
+        width: 100%;
+    }
+    .accordion__fist {
+        background-color: var(--primary2);
+        font-size: 1.6rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        cursor: pointer;
+        height: 44px;
+    }
+    .delete-icon {
+        display: block;
+        font-size: 4rem;
+        padding: 14px 14px 14px 18px;
+    }
+
+    #list1 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    #list1 .dt {
+        margin: 15px 5px 30px 5px;
+    }
+    #list1 .dt img {
+        margin: 10px 0 0 0;
+    }
+
+    .dt-gia {
+        font-size: 1.4rem;
+        margin: 0 0 6px;
+    }
+
+    .dt-name {
+        min-height: 46px;
+    }
+
+    #footer {
+        overflow: hidden ;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .footer__colum {
+        padding: 40px 0 0 0px;
+    }
+
+    .footer__Input {
+        width: 230px;
+    }
+}
+
+/* Tablet & mobile */
+@media (max-width: 63.9375em) {
+
+}
+
+/* tablet - PC low */
+@media (min-width: 46.25em) and (max-width: 70em) {
+    .header__logo-img {
+        width: 1400px;
+        margin-left: -200px;
+    }
+    #list1 {
+        display: grid;
+        grid-template-columns: 33.333% 33.333% 33.333%;
+    }
+    .dt-name {
+        min-height: 46px;
+    }
+    #container {
+        padding: 0 10px;
+    }
+    .show-img {
+        width: 100%;
+        margin: 10px 0;
+    }
+    .header__video {
+        border-top: 10px solid #000;
+        border-bottom: 10px solid #000;
+        margin: 15px 0;
+    }
+
+    .nav__bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 150px;
+        padding: 0 10px;
+        margin: 10px 0 0;
+    }
+    .logo-nguyenkim {
+        display: flex;
+        justify-content: center;
+        margin: 10px auto;
+    }
+    .header__input {
+        display: flex;
+        flex-direction: row-reverse;
+        margin-left: 10px;
+        float: left;
+    }
+    .seacrhInput {
+        border-radius: 8px;
+    }
+    .gioHang {
+        float: right;
+        margin: 10px 0;
+    }
+    .header__hotline {
+        display: none;
+    }
+    .change-img {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    /*  */
+    .accordion__last {
+        display: none;
+    }
+    #cottrai {
+        width: 25%;
+    }
+    #cotphai {
+        width: 75%;
+    }
+
+    /*  */
+    #accordion .ct label {
+        display: block;
+        cursor: pointer;
+        font-size: 1.5rem;
+        margin:  8px 0 8px 20px;
+    }
+
+    .accordion__fist {
+        font-size: 1.5rem;
+    }
+    #accordion .cap {
+        margin: 15px 0 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        color: var(--primary2);
+        cursor: pointer;
+        height: 44px;
+    }
+
+    /* footer */
+    #footer {
+        overflow: hidden ;
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

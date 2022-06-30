@@ -1,0 +1,71 @@
+:root {
+    --primary: #fe0000;
+    --primary2: #c69a39;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* // scrollbar */
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(198,154,57, 0.8);
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgb(198,154,57, 0.8);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    font-size: 62.5% !important;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif !important;
+    box-sizing: border-box;
+}
+
+.active {
+    color: var(--primary);
+}
+
+.bold-black {
+    color: #000;
+    font-weight: 600;
+}
+
+.hover-blue:hover {
+    color: blue;
+    opacity: 0.8;
+}
+
+.display-none {
+    display: none ;
+}
+.display-block {
+    display: block !important;
+}
+.display-flex {
+    display: flex;
+}
