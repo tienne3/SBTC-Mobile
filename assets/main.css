@@ -2,6 +2,7 @@
 #header {
     width: 100%;
     background-color: var(--primary);
+    overflow: hidden;
 }
 
 .nav__bar {
@@ -10,7 +11,7 @@
     height: 74px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header__shopping {
@@ -64,13 +65,14 @@
 .gioHang {
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 
 .gioHang-icon {
     padding: 5px;
     font-size: 1.9rem;
     color: #fff;
-    margin-left: 20px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
