@@ -1,8 +1,6 @@
 /* mobile */
 @media (max-width: 46.1875em) {
-    #header {
-        overflow: hidden;
-    }
+
     .header__logo-img {
         margin-left: -230px;
         width: 1080px;
@@ -272,7 +270,28 @@
 }
 
 
+/* xử lý phần holine */
+@media (min-width: 70em) and (max-width: 90em) {
+    .header__hotline {
+        display: flex;
+        align-items: center;
+    }
+    .nav__bar {
+        margin: 0 63px;
+        padding: 0 20px;
+        height: 74px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
 
+@media (min-width: 70em) and (max-width: 82em) {
+    .header__hotline {
+        display: none;
+        align-items: center;
+    }
+}
 
 
 
