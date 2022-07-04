@@ -16,24 +16,67 @@
 <body>
     <!-- header -->
     <header id="header">
-        <div><img src="./assets/img/background/TOP_oc87-ct.png" alt="" class="header__logo-img"></div>
-        
+
+        <nav class="navbar__top">
+            <div class="navbar__list">
+
+                <ul class="navbar-nav">
+                  <div class="nav-left">
+                    <li class="nav-item border-right cursor-pointer2">Vào cửa hàng trên ứng dụng
+                        <div class="navbar__qr">
+                            <img src="./assets/img/qr-code/qr-code.png" alt="QR code" class="navbar__qr-img">
+                            <div class="navbar__qr-apps">
+                                <span class="navbar__qr-link">
+                                    <img src="./assets/img/qr-code/app-store.png" alt="App store" class="navbar__qr-download-img">
+                                </span>
+                                <span class="navbar__qr-link">
+                                    <img src="./assets/img/qr-code/google-play.png" alt="Google play" class="navbar__qr-download-img">
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">Kết nối
+                        
+                    <i class="navbar__top-icon-left fa-brands fa-facebook"></i>
+                    <i class="navbar__top-icon-left fa-brands fa-instagram"></i>
+                    </li>
+                </div>
+                
+                  <div class="nav-right">
+                      <li class="nav-item cursor-pointer">
+                          <i class="navbar__top-icon-right fa-solid fa-cart-shopping"></i>
+                        Giỏ hàng</li>
+                      <li class="nav-item cursor-pointer hide-mobile">
+                        <i class="navbar__top-icon-right far fa-bell"></i>  
+                        Thông báo</li>
+                      <li class="nav-item cursor-pointer hide-mobile">
+                        <i class="navbar__top-icon-right far fa-circle-question"></i>
+                        Trợ giúp</li>
+                      <li class="nav-item cursor-pointer2">
+                      <i class="navbar__top-icon-right fa-solid fa-circle-user"></i>
+                        <span>Vũ Minh Tiến</span>
+                        <ul class="nav__account">
+                          <li>Tài khoản của tôi</li>
+                          <li>Địa chỉ của tôi</li>
+                          <li>Đơn mua</li>
+                          <li>Đăng xuất</li>
+                        </ul>
+                      </li>
+                  </div>
+                </ul>
+            </div>
+          </nav>
+
+        <!--  -->
         <div class="nav__bar">
             <img src="./assets/img/background/Logo_NK.svg" alt="" class="logo-nguyenkim">
             <div class="header__input">
                 <input type="text" class="seacrhInput" placeholder="Nhập tìm kiếm">
+                <i class="input__delete">&times;</i>
                 <button id="search">
                     <i class="search-icon fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
-            <div class="gioHang">
-                    <i class="gioHang-icon fa-solid fa-cart-shopping"></i>
-                    <span class="">Giỏ hàng</span>
-
-                    <i class="gioHang-icon fa-solid fa-circle-user"></i>
-                    <span class="">Tài khoản</span>
-            </div>
-            <br/>
             <div class="header__hotline">
                 <div><i class="hotline-icon fa-solid fa-phone"></i></div>
                 <div>
@@ -41,9 +84,9 @@
                     <p class="hotline-desc">Mua hàng - Góp ý - Bảo hành</p>
                 </div>
             </div>
-
         </div>
     </header>
+
 
     <!-- content -->
     <div id="container" class="a">
@@ -51,6 +94,7 @@
             <img src="./assets/img/background-show/banner-xiaomi-12.jpg" alt="" class="show-img">
             <iframe class="header__video" width="362" height="191" src="https://www.youtube.com/embed/u6fclZjbrMc" title="YouTube video player" 
             frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <div class="Sphere"></div> -->
         </div>
         <main id="main">
             <div id="cottrai" class="cottrai">
@@ -70,10 +114,10 @@
                     <div class="cap">Thương hiệu:</div>
                     <div class="ct">
                         <label><input type="checkbox" class="thuonghieu" value="Apple">Apple</label>
-                        <label><input type="checkbox" class="thuonghieu" value="OPPO">OPPO</label>
                         <label><input type="checkbox" class="thuonghieu" value="Samsung">Samsung</label>
                         <label><input type="checkbox" class="thuonghieu" value="Xiaomi">Xiaomi</label>
                         <label><input type="checkbox" class="thuonghieu" value="Huawei">Huawei</label>
+                        <label><input type="checkbox" class="thuonghieu" value="OPPO">OPPO</label>
                         <label><input type="checkbox" class="thuonghieu" value="LG">LG</label>
                         <label><input type="checkbox" class="thuonghieu" value="Vivo">Vivo</label>
                     </div>
@@ -120,8 +164,12 @@
             </div>
         </main>
         <ul id="pagination">
-            <li>1</li>
-            <li>2</li>
+            <li class="prev-pagi"><i class="pagination-icon fa-solid fa-angle-left"></i></li>
+            <li class="pagination__page-number active2">1</li>
+            <li class="pagination__page-number">2</li>
+            <li class="pagination__page-number">3</li>
+            <li class="pagination__page-number">4</li>
+            <li class="next-pagi"><i class="pagination-icon fa-solid fa-angle-right"></i></li>
         </ul>
     </div>
 
@@ -185,8 +233,11 @@
             <h2 class="footer__heading">
                 <i class="fa-solid fa-envelope-dot"></i>
                 ĐĂNG KÝ NHẬN BẢNG TIN</h2>
-                <input type="text" name="" id="" placeholder="Nhập email của bạn" class="footer__Input">
-                <button class="footer__btn">Gửi</button>
+                <div class="footer__search-input">
+                    <input type="text" name="" id="" placeholder="Nhập email của bạn" class="footer__input">
+                    <i class="footer__input-delete">&times;</i>
+                    <button class="footer__btn">Gửi</button>
+                </div>
             <h2 class="footer__heading">
                 <i class="fa-solid fa-link"></i>
                 LIÊN KẾT</h2>
@@ -228,5 +279,31 @@
     </div>
 
     <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+
+    <script>
+      const Texts = [
+        'Apple', 'Xiaomi', 'Samsung',
+        'Apple', 'Xiaomi', 'Samsung',
+        'OPPO', 'Vivo', 'Bphone',
+        'OPPO', 'Vivo', 'Bphone',
+        'Nokia', 'Pixel', 'Vertu', 'Vsmart',
+        'Nokia', 'Pixel', 'Vertu', 'Vsmart',
+        
+      ]
+      var tagCloud = TagCloud('.Sphere', Texts, {
+        radius: 200,
+        maxSpeed: 'normal',
+        initSpeed: 'fast',
+        direction: 135,
+        keep: true
+      })
+
+      var color = 'var(--primary)'
+      document.querySelector('.Sphere').style.color = color
+      document.querySelector('.Sphere').style.fontSize = '2rem'
+
+
+    </script>
 </body>
 </html>
