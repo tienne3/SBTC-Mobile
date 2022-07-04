@@ -70,7 +70,7 @@ var arrDT = [
         giaTien: '26,750,000',
         hinh: './assets/img/iphone-13-pro-xanh.jpg',
         thuonghieu: 'Apple',
-        manhinh: '6'
+        manhinh: '6.2'
     },
     {
         tenDT: 'Xiaomi POCO F4 GT',
@@ -102,7 +102,7 @@ var arrDT = [
         giaTien: '12,500,000',
         hinh: './assets/img/iphone-11-tim.jpg',
         thuonghieu: 'Apple',
-        manhinh: '5.1'
+        manhinh: '5.8'
     },
     {
         tenDT: 'Vivo iQOO Z5 (Snap 778G)',
@@ -122,11 +122,11 @@ var arrDT = [
     },
     {
         tenDT: 'iPhone 12 Nhật Bản (Mới 100%)',
-        gia: 12950000,
-        giaTien: '12,950,000',
+        gia: 18950000,
+        giaTien: '18,950,000',
         hinh: './assets/img/iphone-12-chinh-hang-blue.jpg',
         thuonghieu: 'Apple',
-        manhinh: '5.8'
+        manhinh: '5.7'
     },
     {
         tenDT: 'iPhone XS Max Cũ (64GB, 256GB)',
@@ -134,7 +134,7 @@ var arrDT = [
         giaTien: '7,950,000',
         hinh: './assets/img/iphone-xs-max-vang.jpg',
         thuonghieu: 'Apple',
-        manhinh: '5.5'
+        manhinh: '6'
     },
     {
         tenDT: 'Xiaomi 11T 5G (Chính hãng DGW)',
@@ -306,6 +306,7 @@ var arrDT = [
     },
 ]
 
+
 // hàm render điện thoai
 function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_arr=[]) {
     let soDTduochien = 0
@@ -319,6 +320,13 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
         thuonghieuDT = arrDT[i].thuonghieu;
         manhinhDT = arrDT[i].manhinh;
 
+
+
+         // // sắp xếp theo giá
+         if (sapxep_arr.length > 0) {
+            if (sapxep_arr.includes('1') == false && arrDT.sort((a, b) => - a.gia + b.gia)) continue 
+            if (sapxep_arr.includes('2') == false && arrDT.sort((a, b) =>  a.gia - b.gia)) continue
+        }
 
         // lọc thương hiệu đc chọn
         if (thuonghieuchon_arr.length > 0) {
@@ -342,12 +350,6 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
             if (Number(manhinhDT) >= 6 && manhinh_arr.includes('2') == false) continue
         }
 
-        // sắp xếp theo giá
-        if (sapxep_arr.length > 0) {
-            if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false && thuonghieuchon_arr.includes(thuonghieuDT) == false) renderDT() 
-            if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false && thuonghieuchon_arr.includes(thuonghieuDT) == false) renderDT()
-        }
-
 
         soDTduochien++
 
@@ -368,6 +370,7 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
     <div class='soDT'>${soDTduochien} Sản phẩm</div>`
 }
 renderDT()
+
 
 /////
 function chonDT() {
@@ -398,26 +401,12 @@ function chonDT() {
         if (arr4[i].checked) sapxep_arr.push(arr4[i].value)
     }
 
-    renderDT(thuonghieuchon_arr, giaban_arr, manhinh_arr,sapxep_arr)
+    renderDT(thuonghieuchon_arr, giaban_arr, manhinh_arr, sapxep_arr)
 }
 
 arr = $$('#accordion input')
-for (var i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
+for (i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
 
-
-// // search input
-// const seacrhInput = document.querySelector('.seacrhInput')
-// function searchItem() {
-//     const valueItem = seacrhInput.value
-//     const timkiemDT_arr = []
-
-//     Array.from(valueItem).forEach(function() {
-//         if (valueItem) timkiemDT_arr.push(valueItem)
-//     })
-
-//     renderDT(timkiemDT_arr)
-// }
-// seacrhInput.addEventListener('keyup', searchItem)
 
 
 // nav bars
@@ -426,12 +415,12 @@ const cottrai = $('#cottrai')
 const hideBtn = $('.delete-icon')
 const header = $('#header')
 
-// hàm mở menu
+// hàm mở menu cottrai
 function handleMenu() {
     cottrai.classList.add('display-block')
 }
 
-// hàm đóng menu
+// hàm đóng menu cottrai
 function deleteMenu() {
     cottrai.classList.remove('display-block')
 }
@@ -458,11 +447,11 @@ a.forEach(item => {
 // pagination
 const pageNumber = $$('.pagination__page-number')
 
-pageNumber.forEach( function(page, index) {
+pageNumber.forEach((page, index) => {
     page.onclick = function() {
         $('.pagination__page-number.active2').classList.remove('active2')
 
-        this.classList.add('active2')
+        page.classList.add('active2')
     }
 });
 
@@ -488,4 +477,3 @@ function handleFooterDelete() {
 
 footerInputDelete.addEventListener('click', handleFooterDelete)
 footerInput.addEventListener('input', handleFooterSearch)
-
