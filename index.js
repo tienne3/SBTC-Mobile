@@ -324,8 +324,8 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
 
          // // sắp xếp theo giá
          if (sapxep_arr.length > 0) {
-            if (sapxep_arr.includes('1') == false && arrDT.sort((a, b) => - a.gia + b.gia)) continue 
-            if (sapxep_arr.includes('2') == false && arrDT.sort((a, b) =>  a.gia - b.gia)) continue
+            if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false) continue 
+            if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false) continue
         }
 
         // lọc thương hiệu đc chọn
