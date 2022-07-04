@@ -1,7 +1,32 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-///
+
+// handle search input
+const searchInput = $('.seacrhInput')
+const inputDelete = $('.input__delete')
+
+function handleSearch(e) {
+    const inputValue = e.target.value
+    if(inputValue.length > 0) {
+        inputDelete.classList.add('display-block')
+    } 
+    if (inputValue.length == 0) {
+        inputDelete.classList.remove('display-block')
+    }
+}
+function handleDelete() {
+    searchInput.value = ''
+    inputDelete.classList.remove('display-block')
+    searchInput.focus()
+}
+
+inputDelete.addEventListener('click', handleDelete)
+searchInput.addEventListener('input', handleSearch)
+
+
+
+/// change background
 const changeImgs = $('.change-img')
 const imgTag = $('.show-img')
 var index = 1
@@ -12,6 +37,7 @@ const imgs = [
     'assets/img/background-show/banner-redmi-k50-gaming-2.png',
     'assets/img/background-show/banner-samsung-galaxy-s20-series.jpg',
 ]   
+
 changeBackground = () => {
     imgTag.setAttribute('src', imgs[index])
     index++
@@ -67,7 +93,7 @@ var arrDT = [
         gia: 27550000,
         giaTien: '27,550,000',
         hinh: './assets/img/honor-magic-v-3-2.jpg',
-        thuonghieu: 'OPPO',
+        thuonghieu: 'Huawei',
         manhinh: '6'
     },
     {
@@ -280,21 +306,6 @@ var arrDT = [
     },
 ]
 
-//////// phân trang
-// let currentPage = 1
-// let perPage = 16
-// let totalPage = arrDT.length / 16
-// let perUser = []
-
-// perUser = arrDT.splice(
-//     (currentPage - 1) * perPage,
-//     (currentPage - 1) * perPage + perPage
-// )
-
-// function renderPageNumber() {
-    
-// }
-
 // hàm render điện thoai
 function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_arr=[]) {
     let soDTduochien = 0
@@ -308,16 +319,13 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
         thuonghieuDT = arrDT[i].thuonghieu;
         manhinhDT = arrDT[i].manhinh;
 
-        // if(arrDT.length >= 16) {
-        //     arrDT.length = 16
-        // }
 
         // lọc thương hiệu đc chọn
         if (thuonghieuchon_arr.length > 0) {
             if (thuonghieuchon_arr.includes(thuonghieuDT) == false) {
                 continue
             }
-        }
+        } 
 
         // lọc theo giá bán
         if (giaban_arr.length > 0) {
@@ -336,10 +344,11 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
 
         // sắp xếp theo giá
         if (sapxep_arr.length > 0) {
-            if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false) renderDT() 
-            if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false) renderDT()
+            if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false && thuonghieuchon_arr.includes(thuonghieuDT) == false) renderDT() 
+            if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false && thuonghieuchon_arr.includes(thuonghieuDT) == false) renderDT()
         }
-        
+
+
         soDTduochien++
 
         // render list dt
@@ -347,7 +356,7 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
         <div class='dt'>
         <img src='${hinh}' class='dt-img'>
         <h3 class='dt-name'>${tenDT}</h3>
-        <h4 class='dt-gia'>${giaTien}đ - ${manhinhDT}: Inch</h4>
+        <h4 class='dt-gia'>${giaTien}đ - ${manhinhDT} Inch</h4>
         <button class='mua-btn'>Mua</button>
         <p class='dt-desc'>Tặng: <span class="active">Cường lực - Ốp lưng - Tai nghe</span> khi mua BHV
         <br/>
@@ -427,7 +436,6 @@ function deleteMenu() {
     cottrai.classList.remove('display-block')
 }
 
-
 menuBtn.addEventListener('click', handleMenu)
 //
 hideBtn.addEventListener('click', deleteMenu)
@@ -437,10 +445,47 @@ $("#soDTduochien").addEventListener('click', deleteMenu)
 
 
 
+// accordion last
+const a = $$('.accordion-desc')
+a.forEach(item => {
+    item.onclick = function() {
+        $('.accordion-desc.active').classList.remove('active')
+        this.classList.add('active')
+    }
+})
 
 
+// pagination
+const pageNumber = $$('.pagination__page-number')
+
+pageNumber.forEach( function(page, index) {
+    page.onclick = function() {
+        $('.pagination__page-number.active2').classList.remove('active2')
+
+        this.classList.add('active2')
+    }
+});
 
 
+// handle footer search input
+const footerInput = $('.footer__input')
+const footerInputDelete = $('.footer__input-delete')
 
+function handleFooterSearch(e) {
+    const inputValue1 = e.target.value
+    if(inputValue1.length > 0) {
+        footerInputDelete.classList.add('display-block')
+    } 
+    if (inputValue1.length == 0) {
+        footerInputDelete.classList.remove('display-block')
+    }
+}
+function handleFooterDelete() {
+    footerInput.value = ''
+    footerInputDelete.classList.remove('display-block')
+    footerInput.focus()
+}
 
+footerInputDelete.addEventListener('click', handleFooterDelete)
+footerInput.addEventListener('input', handleFooterSearch)
 
