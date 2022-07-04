@@ -1,37 +1,77 @@
 /* mobile */
 @media (max-width: 46.1875em) {
-
-    .header__logo-img {
-        margin-left: -230px;
-        width: 1080px;
-        height: 35px;
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 0;
     }
+    .navbar__top {
+        padding: 0;
+        margin: 0;
+    }
+
     .nav__bar {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 150px;
-        padding: 0 10px;
-        margin: 10px 0 0;
+        height: 120px;
+        margin: 0;
     }
+
+    .navbar__qr {
+        margin-top: 0;
+    }
+    .nav-left li {
+        margin: 0;
+        padding: 6px 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-left {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .nav-right {
+        display: flex;
+        justify-content: center;
+        margin-top: 5px;
+    }
+    
+    .navbar__qr::before {
+        content: '';
+        display: block;
+        width: 196px;
+        height: 20px;
+        background-color: transparent;
+        margin-top: -20px;
+        margin-left: 10px;
+    }
+
+    .nav-right li {
+        padding: 6px 15px;
+        margin: 0;
+    }
+    .hide-mobile {
+        display: none;
+    }
+
     .logo-nguyenkim {
         display: flex;
         justify-content: center;
-        margin: 10px auto;
     }
-    .header__input {
-        display: flex;
-        flex-direction: row-reverse;
-        margin-left: 10px;
-        float: left;
-    }
+
     .seacrhInput {
-        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 300px;
     }
-    .gioHang {
-        float: right;
-        margin: 10px 0;
-    }
+    
     .header__hotline {
         display: none;
     }
@@ -70,7 +110,7 @@
         padding: 0 10px;
     }
     #cottrai {
-        height: 2000px;
+        height: 100%;
         display: none;
         position: fixed;
         width: 65%;
@@ -158,8 +198,8 @@
         padding: 40px 0 0 0px;
     }
 
-    .footer__Input {
-        width: 230px;
+    .footer__search-input {
+        width: 285px;
     }
 }
 
@@ -170,9 +210,9 @@
 
 /* tablet - PC low */
 @media (min-width: 46.25em) and (max-width: 70em) {
-    .header__logo-img {
-        width: 1400px;
-        margin-left: -200px;
+    .navbar__top {
+        padding: 0 48px;
+        margin: 0 33px;
     }
     #list1 {
         display: grid;
@@ -194,6 +234,17 @@
         margin: 15px 0;
     }
 
+    .navbar__top {
+        padding: 0 44px;
+        margin: 0;
+    }
+    .nav-left li {
+        margin-right: 10px;
+    }
+    .nav-right li {
+        margin-left: 10px;
+    }
+
     .nav__bar {
         display: flex;
         flex-direction: column;
@@ -207,18 +258,10 @@
         justify-content: center;
         margin: 10px auto;
     }
-    .header__input {
-        display: flex;
-        flex-direction: row-reverse;
-        margin-left: 10px;
-        float: left;
-    }
+
     .seacrhInput {
-        border-radius: 8px;
-    }
-    .gioHang {
-        float: right;
-        margin: 10px 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
     }
     .header__hotline {
         display: none;
@@ -267,38 +310,48 @@
         display: grid;
         grid-template-columns: 50% 50%;
     }
+    .footer__search-input {
+        width: 285px;
+    }
+
 }
 
 
 /* xử lý phần holine */
-@media (min-width: 70em) and (max-width: 90em) {
-    .header__hotline {
-        display: flex;
-        align-items: center;
-    }
-    .nav__bar {
-        margin: 0 63px;
-        padding: 0 20px;
-        height: 74px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-
-@media (min-width: 70em) and (max-width: 82em) {
+@media (min-width: 60em) and (max-width: 76em) {
     .header__hotline {
         display: none;
-        align-items: center;
     }
 }
 
+@media (max-width: 20em) {
+    .header__video {
+        width: 100%;
+    }
+}
 
+@media (min-width: 48em) and (max-width: 51.25em) {
+    .nav__bar {
+        height: 130px;
+        margin-top: 0;
+    }
 
+    .hide-mobile {
+        display: none !important;
+    }
 
+    .nav-left li {
+        margin: 0;
+        padding: 6px 15px;
+        display: flex;
+        justify-content: center;
+    }
 
-
-
-
-
+    .nav-right li {
+        margin: 0;
+        padding: 6px 15px;
+        display: flex;
+        justify-content: center;
+    }
+}
 
