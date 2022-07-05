@@ -694,7 +694,7 @@
 .footer-after-info {
     text-align: center;
     color: #3f3f3f;
-    font-size: 12px;
-    line-height: 137.99%;
+    font-size: 1.2rem;
     margin: 10px 0;
+    padding: 0 10px;
 }
