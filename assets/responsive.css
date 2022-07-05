@@ -195,7 +195,7 @@
         grid-template-columns: 100%;
     }
     .footer__colum {
-        padding: 40px 0 0 0px;
+        padding: 40px 10px 0px;
     }
 
     .footer__search-input {
@@ -354,4 +354,3 @@
         justify-content: center;
     }
 }
-
