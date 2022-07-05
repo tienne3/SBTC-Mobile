@@ -25,6 +25,20 @@ inputDelete.addEventListener('click', handleDelete)
 searchInput.addEventListener('input', handleSearch)
 
 
+//// search sản phẩm
+searchInput.addEventListener('input', function(e) {  
+    let txtSearch = e.target.value.trim().toLowerCase()
+    let listProductDOM = document.querySelectorAll('.dt')
+
+    listProductDOM.forEach(item => {
+        if (item.innerText.toLowerCase().includes(txtSearch)) {
+            item.classList.remove('display-none')
+        } else {
+            item.classList.add('display-none')
+        }
+    })
+})
+
 
 /// change background
 const changeImgs = $('.change-img')
@@ -69,7 +83,7 @@ var arrDT = [
         gia: 26750000 ,
         giaTien: '26,750,000',
         hinh: './assets/img/iphone-13-pro-xanh.jpg',
-        thuonghieu: 'Apple',
+        thuonghieu: 'Iphone',
         manhinh: '6.2'
     },
     {
@@ -101,7 +115,7 @@ var arrDT = [
         gia: 12500000 ,
         giaTien: '12,500,000',
         hinh: './assets/img/iphone-11-tim.jpg',
-        thuonghieu: 'Apple',
+        thuonghieu: 'Iphone',
         manhinh: '5.8'
     },
     {
@@ -125,7 +139,7 @@ var arrDT = [
         gia: 18950000,
         giaTien: '18,950,000',
         hinh: './assets/img/iphone-12-chinh-hang-blue.jpg',
-        thuonghieu: 'Apple',
+        thuonghieu: 'Iphone',
         manhinh: '5.7'
     },
     {
@@ -133,7 +147,7 @@ var arrDT = [
         gia: 7950000 ,
         giaTien: '7,950,000',
         hinh: './assets/img/iphone-xs-max-vang.jpg',
-        thuonghieu: 'Apple',
+        thuonghieu: 'Iphone',
         manhinh: '6'
     },
     {
@@ -221,7 +235,7 @@ var arrDT = [
         gia: 21600000,
         giaTien: '21,600,000',
         hinh: './assets/img/iphone-13-xanh.jpg',
-        thuonghieu: 'Apple',
+        thuonghieu: 'Iphone',
         manhinh: '6.2'
     },
     {
@@ -320,19 +334,15 @@ function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_a
         thuonghieuDT = arrDT[i].thuonghieu;
         manhinhDT = arrDT[i].manhinh;
 
-
-
-         // // sắp xếp theo giá
-         if (sapxep_arr.length > 0) {
+        //  // sắp xếp theo giá
+        if (sapxep_arr.length > 0) {
             if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false) continue 
             if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false) continue
         }
 
         // lọc thương hiệu đc chọn
         if (thuonghieuchon_arr.length > 0) {
-            if (thuonghieuchon_arr.includes(thuonghieuDT) == false) {
-                continue
-            }
+            if (thuonghieuchon_arr.includes(thuonghieuDT) == false) continue
         } 
 
         // lọc theo giá bán
@@ -401,7 +411,7 @@ function chonDT() {
         if (arr4[i].checked) sapxep_arr.push(arr4[i].value)
     }
 
-    renderDT(thuonghieuchon_arr, giaban_arr, manhinh_arr, sapxep_arr)
+    renderDT(thuonghieuchon_arr, giaban_arr, manhinh_arr,sapxep_arr)
 }
 
 arr = $$('#accordion input')
