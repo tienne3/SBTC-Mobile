@@ -9,7 +9,7 @@
     margin: 0 63px;
 }
 
-.navbar-nav {
+.navbar__top-items {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
@@ -64,12 +64,12 @@
     height: 16px;
 }
 
-.nav-item:hover .navbar__qr {
+.navbar__item-link:hover .navbar__qr {
     display: block;
 }
 
 /* left */
-.nav-left {
+.navbar__top-left {
     display: flex;
     align-items: center;
     margin: 6px 0;
@@ -78,21 +78,21 @@
     border-right: 1px solid #fff;
 }
 
-.navbar__top-icon-left {
+.navbar__top-left-icon {
     font-size: 1.7rem;
     margin-left: 8px;
     cursor: pointer;
 }
-.navbar__top-icon-left:hover {
+.navbar__top-left-icon:hover {
     opacity: 0.8;
 }
-.nav-left li {
+.navbar__top-left li {
     flex-direction: row;
     margin-right: 10px;
     padding: 6px 15px 6px 0;
 }
 
-.nav-item {
+.navbar__item-link {
     position: relative;
     margin: 0 4px;
     font-size: 1.4rem;
@@ -100,17 +100,17 @@
 }
 
 /* right */
-.nav-right {
+.navbar__top-right {
     display: flex;
     align-items: center;
 }
 
-.nav-right li {
+.navbar__top-right li {
     padding: 6px 0 6px 10px;
     margin-left: 10px;
 }
 
-.navbar__top-icon-right {
+.navbar__top-right-icon {
     font-size: 1.7rem;
     margin-right: 5px;
 }
@@ -152,12 +152,12 @@
     background-color: rgb(231, 230, 230);
 }
 
-.nav-item:hover .nav__account {
+.navbar__item-link:hover .nav__account {
     display: block;
 }
 
 /*  */
-.nav__bar {
+.nav__bar-body {
     overflow: hidden;
     margin: 0 63px;
     padding: 0 88px;
@@ -176,7 +176,7 @@
     display: flex;
 }
 
-.seacrhInput {
+.navbar__input {
     outline: none;
     height: 40px;
     border: none;
@@ -189,11 +189,11 @@
     border: 1px solid transparent;
 }
 
-.seacrhInput:focus {
+.navbar__input:focus {
     border: 1px solid rgb(124, 124, 252);
 }
 
-.input__delete {
+.input__icon-delete {
     display: none;
     cursor: pointer;
     padding: 13px 12px 10px;
@@ -203,12 +203,12 @@
     margin-top: 0;
 }
 
-.input__delete:hover,
+.input__icon-delete:hover,
 .footer__input-delete:hover {
     opacity: 0.6;
 }
 
-#search {
+#navbar__search-btn {
     position: relative;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -219,7 +219,7 @@
     cursor: pointer;
 }
 
-#search:hover{
+#navbar__search-btn:hover{
     opacity: 0.8;
 }
 
@@ -296,31 +296,29 @@
     margin: auto;
 }
 
-#cottrai {
+#left-column {
     z-index: 2;
     position: relative;
     margin-bottom: 40px;
     border-radius: 4px;
     width: 20%;
     background-color: #d6ecfa;
-}
-.cottrai {
     margin-top: 0px;
 }
 
-.delete-icon {
+.accordion__icon-delete {
     display: none;
     font-size: 4rem;
     padding: 14px 12px 14px 22px;
 }
 
-#cotphai {
+#right-column {
     z-index: 1;
     width: 80%;
 }
 
 /*  */
-.accordion__fist {
+.accordion__left {
     background-color: var(--primary2);
     font-size: 1.6rem;
     font-weight: 500;
@@ -331,8 +329,8 @@
     height: 44px;
 }
 
-/* cottrai */
-#accordion .cap {
+/* left-column */
+#accordion .accordion__cap {
     margin: 20px 0 0;
     font-size: 1.8rem;
     font-weight: 600;
@@ -345,7 +343,7 @@
 }
 
 /*  */
-.accordion__last {
+.accordion__right {
     cursor: pointer;
     border-top: 1px solid #000;
     height: 44px;
@@ -355,7 +353,7 @@
     border-bottom: 1px solid #ccc;
 }
 
-.accordion__last:hover {
+.accordion__right:hover {
     opacity: 0.8;
 }
 
@@ -377,7 +375,7 @@
 }
 
 /*  */
-#accordion .ct label {
+#accordion .accordion__form label {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -385,24 +383,24 @@
     margin:  10px 0 10px 30px;
 }
 
-#accordion .ct label:hover {
+#accordion .accordion__form label:hover {
     color: var(--primary);
 }
 
-#accordion .ct input {
+#accordion .accordion__form input {
     width: 16px;
     height: 16px;
     margin-right: 10px;
 }
 
 /*  */
-#list1 {
+#list-phones {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     padding: 5px 0 10px;
 }
 
-#list1 .dt {
+#list-phones .dt {
     text-align: center;
     border: 1px solid rgb(226, 224, 224);
     margin: 15px 0 30px 15px;
@@ -411,14 +409,14 @@
     min-height: 300px;
 }
 
-#list1 .dt:hover {
+#list-phones .dt:hover {
     box-shadow: 0 10px 20px rgb(0 0 0 / 13%), 0 6px 6px rgb(0 0 0 / 15%);
     border-radius: 4px;
     transition: all .2s ease;
     margin-top: 13px;
 }
 
-#list1 .dt img {
+#list-phones .dt img {
     max-width: 80%;
     margin: 10px;
     max-height: 70%;
@@ -478,7 +476,7 @@
     opacity: 1.7;
 }
 
-#soDTduochien {
+#total-phone {
     background: linear-gradient(130deg, #fa9308 30%, #fa6f1c 10%);
     height: 44px;
     color: #fff;
@@ -536,7 +534,7 @@
     padding: 5px 0 10px;
 }
 
-.footer__colum {
+.footer__column {
     padding: 30px 10px 0 0;
 }
 
@@ -686,12 +684,12 @@
 }
 
 /* footer after */
-.footer-after {
+.footer__after {
     border-top: 1px solid #ccc;
     margin: 5px 0 30px;
 }
 
-.footer-after-info {
+.footer__after-info {
     text-align: center;
     color: #3f3f3f;
     font-size: 1.2rem;
