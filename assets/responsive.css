@@ -173,19 +173,19 @@
         grid-template-columns: 50% 50%;
     }
 
-    #list-phones .dt {
+    #list-phones .phones {
         margin: 15px 5px 30px 5px;
     }
-    #list-phones .dt img {
+    #list-phones .phones img {
         margin: 10px 0 0 0;
     }
 
-    .dt-gia {
+    .phones-price {
         font-size: 1.4rem;
         margin: 0 0 6px;
     }
 
-    .dt-name {
+    .phones-name {
         min-height: 46px;
     }
 
@@ -218,7 +218,7 @@
         display: grid;
         grid-template-columns: 33.333% 33.333% 33.333%;
     }
-    .dt-name {
+    .phones-name {
         min-height: 46px;
     }
     #container {
