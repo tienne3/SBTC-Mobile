@@ -1,489 +1,278 @@
-const $ = document.querySelector.bind(document)
-const $$ = document.querySelectorAll.bind(document)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font-icon/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/main.css">
+    <link rel="stylesheet" href="./assets/gird.css">
+    <link rel="stylesheet" href="./assets/base.css">
+    <link rel="stylesheet" href="./assets/responsive.css">
 
+    <title>TheGioiDiDong</title>
+</head>
 
-// handle search input
-const searchInput = $('.navbar__input')
-const inputIconDelete = $('.input__icon-delete')
+<body>
+    <!-- header -->
+    <header id="header">
+        <nav class="navbar__top">
+            <div class="navbar__top-list">
+                <ul class="navbar__top-items">
+                  <div class="navbar__top-left">
+                    <li class="navbar__item-link border-right cursor-pointer2">Vào cửa hàng trên ứng dụng
+                        <div class="navbar__qr">
+                            <img src="./assets/img/qr-code/qr-code.png" alt="QR code" class="navbar__qr-img">
+                            <div class="navbar__qr-apps">
+                                <span class="navbar__qr-link">
+                                    <img src="./assets/img/qr-code/app-store.png" alt="App store" class="navbar__qr-download-img">
+                                </span>
+                                <span class="navbar__qr-link">
+                                    <img src="./assets/img/qr-code/google-play.png" alt="Google play" class="navbar__qr-download-img">
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="navbar__item-link">Kết nối
+                    <i class="navbar__top-left-icon fa-brands fa-facebook"></i>
+                    <i class="navbar__top-left-icon fa-brands fa-instagram"></i>
+                    </li>
+                </div>
+                
+                  <div class="navbar__top-right">
+                      <li class="navbar__item-link cursor-pointer">
+                          <i class="navbar__top-right-icon fa-solid fa-cart-shopping"></i>
+                        Giỏ hàng</li>
+                      <li class="navbar__item-link cursor-pointer hide-mobile">
+                        <i class="navbar__top-right-icon far fa-bell"></i>  
+                        Thông báo</li>
+                      <li class="navbar__item-link cursor-pointer hide-mobile">
+                        <i class="navbar__top-right-icon far fa-circle-question"></i>
+                        Trợ giúp</li>
+                      <li class="navbar__item-link cursor-pointer2">
+                      <i class="navbar__top-right-icon fa-solid fa-circle-user"></i>
+                        <span>Vũ Minh Tiến</span>
+                        <ul class="nav__account">
+                          <li>Tài khoản của tôi</li>
+                          <li>Địa chỉ của tôi</li>
+                          <li>Đơn mua</li>
+                          <li>Đăng xuất</li>
+                        </ul>
+                      </li>
+                  </div>
+                </ul>
+            </div>
+          </nav>
 
-function handleSearch(e) {
-    const inputValue = e.target.value
-    if(inputValue.length > 0) {
-        inputIconDelete.classList.add('display-block')
-    } 
-    if (inputValue.length == 0) {
-        inputIconDelete.classList.remove('display-block')
-    }
-}
-function handleDeleteValue() {
-    searchInput.value = ''
-    inputIconDelete.classList.remove('display-block')
-    searchInput.focus()
-}
-
-inputIconDelete.addEventListener('click', handleDeleteValue)
-searchInput.addEventListener('input', handleSearch)
-
-
-//// search sản phẩm
-searchInput.addEventListener('input', function(e) {  
-    let valueSearch = e.target.value.trim().toLowerCase()
-    let listPhones = document.querySelectorAll('.phones')
-
-    listPhones.forEach(item => {
-        if (item.innerText.toLowerCase().includes(valueSearch)) {
-            item.classList.remove('display-none')
-        } else {
-            item.classList.add('display-none')
-        }
-    })
-})
-
-
-/// change background
-const changeImgs = $('.change-img')
-const imgTag = $('.show-img')
-var index = 1
-const imgs = [
-    'assets/img/background-show/banner-xiaomi-12.jpg',
-    'assets/img/background-show/banner-iphone-12-nhat.jpg',
-    'assets/img/background-show/banner-realme-q5-pro.jpg',
-    'assets/img/background-show/banner-redmi-k50-gaming-2.png',
-    'assets/img/background-show/banner-samsung-galaxy-s20-series.jpg',
-]   
-
-changeBackground = () => {
-    imgTag.setAttribute('src', imgs[index])
-    index++
-    if (index == imgs.length) index = 0
-}
-
-setInterval(changeBackground, 4000);
-
-///////
-const arrDT = [
-    {
-        phoneName: 'OPPO Reno8 Pro',
-        price: 18300000,
-        phonePrice: '18,300,000',
-        imagePhone: './assets/img/oppo-reno-8pro-vang.jpg',
-        brand: 'OPPO',
-        screen: '6'
-    },
-    {
-        phoneName: 'Nubia Red Magic 7',
-        price: 13950000,
-        phonePrice: '13,950,000',
-        imagePhone: './assets/img/nubia-red-magic-7-trong-suot.jpg',
-        brand: 'Xiaomi',
-        screen: '5.8'
-    },
-    {
-        phoneName: 'iPhone 13 Pro Chính hãng VN/A',
-        price: 26750000 ,
-        phonePrice: '26,750,000',
-        imagePhone: './assets/img/iphone-13-pro-xanh.jpg',
-        brand: 'Iphone',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Xiaomi POCO F4 GT',
-        price: 19550000,
-        phonePrice: '19,550,000',
-        imagePhone: './assets/img/poco-f4-gt-vang.jpg',
-        brand: 'Xiaomi',
-        screen: '6.3'
-    },
-    {
-        phoneName: 'OPPO Reno6 Z',
-        price: 7550000,
-        phonePrice: '7,550,000',
-        imagePhone: './assets/img/oppo-reno-6z-b.jpg',
-        brand: 'OPPO',
-        screen: '5.9'
-    },
-    {
-        phoneName: 'Huawei Honor Magic V',
-        price: 27550000,
-        phonePrice: '27,550,000',
-        imagePhone: './assets/img/honor-magic-v-3-2.jpg',
-        brand: 'Huawei',
-        screen: '6'
-    },
-    {
-        phoneName: 'iPhone 11 cũ (64GB, 128GB)',
-        price: 12500000 ,
-        phonePrice: '12,500,000',
-        imagePhone: './assets/img/iphone-11-tim.jpg',
-        brand: 'Iphone',
-        screen: '5.8'
-    },
-    {
-        phoneName: 'Vivo iQOO Z5 (Snap 778G)',
-        price: 6650000,
-        phonePrice: '6,650,000',
-        imagePhone: './assets/img/vivo-iqoo-z5-den.jpg',
-        brand: 'Vivo',
-        screen: '5.8'
-    },
-    {
-        phoneName: 'Samsung Galaxy S20 cũ (Hàn Quốc, Mỹ)',
-        price: 6950000,
-        phonePrice: '6,950,000',
-        imagePhone: './assets/img/galaxy-s20-cu-xam.png',
-        brand: 'Samsung',
-        screen: '5.3'
-    },
-    {
-        phoneName: 'iPhone 12 Nhật Bản (Mới 100%)',
-        price: 18950000,
-        phonePrice: '18,950,000',
-        imagePhone: './assets/img/iphone-12-chinh-hang-blue.jpg',
-        brand: 'Iphone',
-        screen: '5.7'
-    },
-    {
-        phoneName: 'iPhone XS Max Cũ (64GB, 256GB)',
-        price: 7950000 ,
-        phonePrice: '7,950,000',
-        imagePhone: './assets/img/iphone-xs-max-vang.jpg',
-        brand: 'Iphone',
-        screen: '6'
-    },
-    {
-        phoneName: 'Xiaomi 11T 5G (Chính hãng DGW)',
-        price: 8150000 ,
-        phonePrice: '8,150,000',
-        imagePhone: './assets/img/mi-11t-xanh.jpeg',
-        brand: 'Xiaomi',
-        screen: '5.9'
-    },
-    {
-        phoneName: 'OPPO Find X5 Pro',
-        price: 21950000,
-        phonePrice: '21,950,000',
-        imagePhone: './assets/img/oppo-find-x5-pro-trang.jpg',
-        brand: 'OPPO',
-        screen: '5.9'
-    },
-    {
-        phoneName: 'LG Velvet',
-        price: 4250000,
-        phonePrice: '4,250,000',
-        imagePhone: './assets/img/lg-velvet-den.jpg',
-        brand: 'LG',
-        screen: '5.6'
-    },
-    {
-        phoneName: 'Xiaomi Redmi Note 11 Pro (Bản China)',
-        price: 5950000,
-        phonePrice: '5,950,000',
-        imagePhone: './assets/img/redmi-note-11-pro-xanh-rung-sau.jpg',
-        brand: 'Xiaomi',
-        screen: '6.1'
-    },
-    {
-        phoneName: 'Huawei Honor 70 Pro',
-        price: 8950000,
-        phonePrice: '8,950,000',
-        imagePhone: './assets/img/honor-70-pro-plus-gold.jpg',
-        brand: 'Huawei',
-        screen: '6.1'
-    },
-    {
-        phoneName: 'OPPO Reno6 5G (Chính hãng)',
-        price: 9750000 ,
-        phonePrice: '9,750,000',
-        imagePhone: './assets/img/oppo-reno6-bac-1-dai-dien.jpg',
-        brand: 'OPPO',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Samsung Galaxy A53 5G (Chính hãng)',
-        price: 7950000 ,
-        phonePrice: '7,950,000',
-        imagePhone: './assets/img/samsung-galaxy-a53-5g-8.jpg',
-        brand: 'Samsung',
-        screen: '5.8'
-    },
-    {
-        phoneName: 'Samsung Galaxy A90 5G (Snap 855)',
-        price: 4850000,
-        phonePrice: '4,850,000',
-        imagePhone: './assets/img/samsung-galaxy-a90-5g-den.jpg',
-        brand: 'Samsung',
-        screen: '5.7'
-    },
-    {
-        phoneName: 'LG V50s ThinQ ',
-        price: 3850000 ,
-        phonePrice: '3,850,000 ',
-        imagePhone: './assets/img/lg-v50-cu.jpg',
-        brand: 'LG',
-        screen: '5.8'
-    },
-    {
-        phoneName: 'Samsung Galaxy M51 Chính hãng',
-        price: 5350000,
-        phonePrice: '5,350,000',
-        imagePhone: './assets/img/samsung-galaxy-m51-trang.png',
-        brand: 'Samsung',
-        screen: '6'
-    },
-    {
-        phoneName: 'iPhone 13 Chính hãng VN/A',
-        price: 21600000,
-        phonePrice: '21,600,000',
-        imagePhone: './assets/img/iphone-13-xanh.jpg',
-        brand: 'Iphone',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Samsung Galaxy S20 Plus cũ (Hàn Quốc)',
-        price: 7950000,
-        phonePrice: '7,950,000',
-        imagePhone: './assets/img/samsung-galaxy-s20-plus-cu-cloud-blue.jpg',
-        brand: 'Samsung',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Huawei Honor Magic 4',
-        price: 23450000,
-        phonePrice: '23,450,000',
-        imagePhone: './assets/img/honor-magic-4-vang.jpg',
-        brand: 'Huawei',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Huawei Honor 70 Pro Plus',
-        price: 15950000,
-        phonePrice: '15,950,000',
-        imagePhone: './assets/img/honor-70-pro-trang.png',
-        brand: 'Huawei',
-        screen: '6.4'
-    },
-    {
-        phoneName: 'LG V60 ThinQ',
-        price: 5950000,
-        phonePrice: '5,950,000',
-        imagePhone: './assets/img/lg-v60-xanh.jpg',
-        brand: 'LG',
-        screen: '6.2'
-    },
-    {
-        phoneName: 'Samsung Galaxy S21 Ultra cũ (Hàn Quốc)',
-        price: 14250000,
-        phonePrice: '14,250,000',
-        imagePhone: './assets/img/samsung-galaxy-s21-ultra-cu-den.jpg',
-        brand: 'Samsung',
-        screen: '6.3'
-    },
-    {
-        phoneName: 'Xiaomi 12 (Snap 820 Gen 1)',
-        price: 15850000,
-        phonePrice: '15,850,000',
-        imagePhone: './assets/img/xiaomi-12-xanh-bac-ha.jpg',
-        brand: 'Xiaomi',
-        screen: '6'
-    },
-    {
-        phoneName: 'Xiaomi Redmi Note 11 (Chính hãng)',
-        price: 13650000,
-        phonePrice: '13,650,000',
-        imagePhone: './assets/img/xiaomi-redmi-note-11-ngoc-trai.jpg',
-        brand: 'Xiaomi',
-        screen: '5.9'
-    },
-    {
-        phoneName: 'Huawei Honor 60 SE',
-        price: 7950000,
-        phonePrice: '7,950,000',
-        imagePhone: './assets/img/honor-60-se-5g-xanh.jpg',
-        brand: 'Huawei',
-        screen: '5.9'
-    },
-    {
-        phoneName: 'Vivo iQOO Neo 5 Lite (Snap 870)',
-        price: 6750000,
-        phonePrice: '6,750,000',
-        imagePhone: './assets/img/vivo-iqoo-neo-5-lite-3.jpg',
-        brand: 'Vivo',
-        screen: '5.6'
-    },
-    {
-        phoneName: 'LG G8 ThinQ',
-        price: 4450000,
-        phonePrice: '4,450,000',
-        imagePhone: './assets/img/lg-g8-xanh.jpg',
-        brand: 'LG',
-        screen: '5.6'
-    },
-]
-
-
-// hàm render điện thoai
-function renderDT(brand_arr=[], price_arr=[], screen_arr=[], sort_arr=[]) {
-    let totalPhone = 0
-    const listPhones = document.getElementById('list-phones')
-    listPhones.innerHTML = ''
-    for (var i = 0; i < arrDT.length; i++) {
-        phoneName = arrDT[i].phoneName;
-        pricePhone = arrDT[i].price;
-        phonePrice = arrDT[i].phonePrice;
-        imagePhone = arrDT[i].imagePhone;
-        brandDT = arrDT[i].brand;
-        screenPhone = arrDT[i].screen;
-
-        //  // sắp xếp theo giá
-        if (sort_arr.length > 0) {
-            if (arrDT.sort((a, b) => - a.price + b.price) && sort_arr.includes('1') == false) continue 
-            if (arrDT.sort((a, b) =>  a.price - b.price) && sort_arr.includes('2') == false) continue
-        }
-
-        // lọc thương hiệu đc chọn
-        if (brand_arr.length > 0) {
-            if (brand_arr.includes(brandDT) == false) continue
-        } 
-
-        // lọc theo giá bán
-        if (price_arr.length > 0) {
-            if (pricePhone < 5000000 && price_arr.includes('1') == false) continue
-            if (pricePhone >= 5000000 && pricePhone < 10000000 && price_arr.includes('2') == false) continue
-            if (pricePhone >= 10000000 && pricePhone < 15000000 && price_arr.includes('3') == false) continue
-            if (pricePhone >= 15000000 && pricePhone < 20000000 && price_arr.includes('4') == false) continue
-            if (pricePhone >= 20000000 && price_arr.includes('5') == false) continue
-        }
-        
-        // lọc theo màn hình
-        if (screen_arr.length > 0) {
-            if (Number(screenPhone) < 6 && screen_arr.includes('1') == false) continue
-            if (Number(screenPhone) >= 6 && screen_arr.includes('2') == false) continue
-        }
-
-
-        totalPhone++
-
-        // render list phones
-        listPhones.innerHTML += `
-        <div class='phones'>
-        <img src='${imagePhone}' class='phones-img'>
-        <h3 class='phones-name'>${phoneName}</h3>
-        <h4 class='phones-price'>${phonePrice}đ - ${screenPhone} Inch</h4>
-        <button class='buy-btn'>Mua</button>
-        <p class='phones-desc'>Tặng: <span class="active">Cường lực - Ốp lưng - Tai nghe</span> khi mua BHV
-        <br/>
-        Giảm thêm: <span class="active">100K</span> áp dụng HSSV mua BHV tại cửa hàng. <span class='phones-more'>Chi tiết...</span></p>
+        <!--  -->
+        <div class="nav__bar-body">
+            <img src="./assets/img/background/Logo_NK.svg" alt="" class="logo-nguyenkim">
+            <div class="header__input">
+                <input type="text" class="navbar__input" placeholder="Nhập tên điện thoại">
+                <i class="input__icon-delete">&times;</i>
+                <button id="navbar__search-btn">
+                    <i class="search-icon fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="header__hotline">
+                <div><i class="hotline-icon fa-solid fa-phone"></i></div>
+                <div>
+                    <p class="hotline-sdt">Hotline: 1800 6800 (Miễn phí)</p>
+                    <p class="hotline-desc">Mua hàng - Góp ý - Bảo hành</p>
+                </div>
+            </div>
         </div>
-        `
-    }
-    $('#total-phone').innerHTML = ` 
-    <div class='total-phones'>${totalPhone} Sản phẩm</div>`
-}
-renderDT()
+    </header>
 
+    <!-- content -->
+    <div id="container">
+        <div class="change-img">
+            <img src="./assets/img/background-show/banner-xiaomi-12.jpg" alt="" class="show-img">
+            <iframe width="362" height="191" src="https://www.youtube.com/embed/zJFwOC_Bv4Y" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <main id="main">
+            <div id="left-column">
+                <div id="accordion">
+                    <div class="accordion__left">
+                        <i class="accordion-icon fa-solid fa-list-ul"></i>
+                            <div>Danh mục sản phẩm</div>
+                        <i class="accordion__icon-delete">&times;</i>
+                    </div>
 
-/////
-function chonDT() {
-    // xem chọn thương hiệu nào
-    const arr1 = document.getElementsByClassName('brand')
-    const brand_arr = []
-    for (i = 0; i < arr1.length; i++) {
-        if (arr1[i].checked) brand_arr.push(arr1[i].value)
-    }
+                    <div class="accordion__cap">Sắp xếp theo giá:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="sort" value="1">Giá thấp đến cao</label>
+                        <label><input type="checkbox" class="sort" value="2">Giá cao đến thấp</label>
+                    </div>
 
-    // xem chọn khoảng giá nào
-    const arr2 = document.getElementsByClassName('price')
-    const price_arr = []
-    for (i = 0; i < arr2.length; i++) {
-        if (arr2[i].checked) price_arr.push(arr2[i].value)
-    }
+                    <div class="accordion__cap">Thương hiệu:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="brand" value="Iphone">Iphone</label>
+                        <label><input type="checkbox" class="brand" value="Samsung">Samsung</label>
+                        <label><input type="checkbox" class="brand" value="Xiaomi">Xiaomi</label>
+                        <label><input type="checkbox" class="brand" value="Huawei">Huawei</label>
+                        <label><input type="checkbox" class="brand" value="OPPO">OPPO</label>
+                        <label><input type="checkbox" class="brand" value="LG">LG</label>
+                        <label><input type="checkbox" class="brand" value="Vivo">Vivo</label>
+                    </div>
+                    <div class="accordion__cap">Giá bán:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="price" value="1">Dưới 5 triệu</label>
+                        <label><input type="checkbox" class="price" value="2">Từ 5 đến 10 triệu</label>
+                        <label><input type="checkbox" class="price" value="3">Từ 10 đến 15 triệu</label>
+                        <label><input type="checkbox" class="price" value="4">Từ 15 đến 20 triệu</label>
+                        <label><input type="checkbox" class="price" value="5">Trên 20 triệu</label>
+                    </div>
+                    <div class="accordion__cap">Màn hình:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="screen" value="1">Dưới 6 inch</label>
+                        <label><input type="checkbox" class="screen" value="2">Từ 6 inch trở lên</label>
+                    </div>
+                </div>
+            </div>
 
-    // xem chọn màn hình khoảng nào
-    const arr3 = document.getElementsByClassName('screen')
-    const screen_arr = []
-    for (i = 0; i < arr3.length; i++) {
-        if (arr3[i].checked) screen_arr.push(arr3[i].value)
-    }
+            <!-- cột phải  -->
+            <div id="right-column">
+                <div class="accordion__right">
+                    <p class="accordion-desc active">
+                        <i class="accordion-icon fa-solid fa-truck"></i>
+                        Miễn phí vận chuyển</p>
+                    <p class="accordion-desc">
+                        <i class="accordion-icon fa-solid fa-book"></i>
+                        Cẩm nang khuyến mãi</p>
+                    <p class="accordion-desc">
+                        <i class="accordion-icon fa-solid fa-basket-shopping"></i>
+                        Hướng dẫn mua hàng online</p>
+                    <p class="accordion-desc">
+                        <i class="accordion-icon fa-solid fa-medal"></i>
+                        Thương hiệu nổi bật</p>
+                </div>
 
-    const arr4 = document.getElementsByClassName('sort')
-    const sort_arr = []
-    for (i = 0; i < arr4.length; i++) {
-        if (arr4[i].checked) sort_arr.push(arr4[i].value)
-    }
+                <!-- icon lists -->
+                <div><i class="list__item-icon fa-solid fa-list"></i></div>
+                
+                <!-- tính tổng đt -->
+                <h4 id="total-phone"></h4>
+                <!-- render đt -->
+                <div id="list-phones"> </div>
+                
+            </div>
+        </main>
+        <ul id="pagination">
+            <li class="prev-pagination"><i class="pagination-icon fa-solid fa-angle-left"></i></li>
+            <li class="pagination__page-number active2">1</li>
+            <li class="pagination__page-number">2</li>
+            <li class="pagination__page-number">3</li>
+            <li class="pagination__page-number">4</li>
+            <li class="next-pagination"><i class="pagination-icon fa-solid fa-angle-right"></i></li>
+        </ul>
+    </div>
 
-    renderDT(brand_arr, price_arr, screen_arr,sort_arr)
-}
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer__column">
+            <div>
+                <h2 class="footer__heading">
+                    <i class="fa-solid fa-location-dot"></i>
+                    HỆ THỐNG CỬA HÀNG</h2>
+            </div>
+            <div class="footer-info">
+                <h4 class="footer__adress">Hà Nội</h4>
+                <p>120 Thái Hà, Q. Đống Đa<span class="footer-map">Xem bản đồ</span>
+                    <br/>
+                    Điện thoại: <span class="footer__sdt"><span class="footer__sdt">0969.120.120</span></span> (Bán hàng) - 
+                    <span class="footer__sdt">037.437.9999</span> (Kỹ thuật)
+                </p>
+                <p>398 Cầu Giấy, Q. Cầu Giấy<span class="footer-map">Xem bản đồ</span>
+                    <br/>
+                    Điện thoại: <span class="footer__sdt"><span class="footer__sdt">096.1111.398</span></span> (Bán hàng) - 
+                    <span class="footer__sdt">037.437.9999</span> (Kỹ thuật)
+                </p>
+            </div>
+            <div class="footer-info">
+                <h4 class="footer__adress">Hồ Chí Minh</h4>
+                <p>123 Trần Quang Khải, Q.1<span class="footer-map">Xem bản đồ</span>
+                    <br/>
+                    Điện thoại: <span class="footer__sdt"><span class="footer__sdt">0965.123.123</span></span> - 
+                    <span class="footer__sdt">0969.520.520</span>
+                </p>
+            </div>
+            <div class="footer-info">
+                <h4 class="footer__adress">Đà Nẵng</h4>
+                <p>97 Hàm Nghi, Q.Thanh Khê<span class="footer-map">Xem bản đồ</span>
+                    <br/>
+                    Điện thoại: <span class="footer__sdt"><span class="footer__sdt">096.123.9797</span></span> - 
+                    <span class="footer__sdt">097.123.9797</span>
+                </p>
+            </div>
+        </div>
 
-arr = $$('#accordion input')
-for (i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
+        <div class="footer__column">
+            <h2 class="footer__heading">
+                <i class="fa-solid fa-circle-question"></i>
+                QUY ĐỊNH - CHÍNH SÁCH</h2>
+            <ul class="footer__service">
+                <li class="footer__desc">Chính sách bảo hành</li>
+                <li class="footer__desc">Chính sách vận chuyển</li>
+                <li class="footer__desc">Chính sách đổi trả hàng</li>
+                <li class="footer__desc">Chính sách bảo mật thông tin</li>
+                <li class="footer__desc">Hướng dẫn thanh toán</li>
+                <li class="footer__desc">Hướng dẫn mua hàng Online</li>
+                <li class="footer__desc">Dịch vụ Ship COD Toàn quốc</li>
+                <li class="footer__desc">Chính sách đại lý linh, phụ kiện</li>
+                <li class="footer__desc">Sitemap</li>
+            </ul>
+        </div>
 
+        <div class="footer__column">
+            <h2 class="footer__heading">
+                <i class="fa-solid fa-envelope-dot"></i>
+                ĐĂNG KÝ NHẬN BẢNG TIN</h2>
+                <div class="footer__search-input">
+                    <input type="text" name="" id="" placeholder="Nhập email của bạn" class="footer__input">
+                    <i class="footer__input-delete">&times;</i>
+                    <button class="footer__btn">Gửi</button>
+                </div>
+            <h2 class="footer__heading">
+                <i class="fa-solid fa-link"></i>
+                LIÊN KẾT</h2>
+                <div class="footer__link">
+                    <p class="footer__app">
+                        <i class="footer__app-icon footer__icon-fb fa-brands fa-facebook"></i>
+                        Facebook</p>
+                    <p class="footer__app">
+                        <i class="footer__app-icon fa-brands fa-youtube"></i>
+                        Youtube</p>
+                </div>
+        </div>
+        <div class="footer__column">
+            <h2 class="footer__heading">THÔNG TIN KHÁC</h2>
+            <div class="footer__other">
+                <p class="footer__orther-desc hover-blue">Email: <br/>
+                <p class="footer__orther-desc active">NKare@nguyenkim.com</p>
+                <p class="footer__orther-desc hover-blue">Mua hàng - Góp ý - Bảo hành</p>
+                <p class="footer__orther-desc">Gọi: <br/>
+                    <b class="active">1800.6800</b> <br/>
+                    Miễn phí</p>
+                <p class="footer__orther-desc">Sơ đồ trang web</p>
+                <span class="footer__orther-desc active"><b>Cảnh báo giả mạo</b></span>
+                <p class="footer__orther-desc bold-black hover-blue">Kênh tiếp nhận phản ánh về hối lộ
+                    </p>
+                <p class="footer__orther-desc hover-blue">Đường dây nóng: <br/>
+                    <b class="active">1800.1713</b>
+                </p>
+            </div>
+        </div>
+    </footer>
 
+    <div class="footer__after">
+        <p class="footer__after-info">Copyright © 1999 - 2022 Công ty Cổ phần Thương mại Nguyễn Kim.</p>
+        <p class="footer__after-info">Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.</p>
+        <p class="footer__after-info">Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần Hưng Đạo, P. Cầu Ông Lãnh, TP. Hồ Chí Minh</p>
 
-// nav bars
-const menuBtn = $('.list__item-icon')
-const leftColumn = $('#left-column')
-const hideBtn = $('.accordion__icon-delete')
-const header = $('#header')
+    </div>
 
-// hàm mở menu leftColumn
-function handleMenu() {
-    leftColumn.classList.add('display-block')
-}
-
-// hàm đóng menu leftColumn
-function hideMenu() {
-    leftColumn.classList.remove('display-block')
-}
-
-menuBtn.addEventListener('click', handleMenu)
-//
-hideBtn.addEventListener('click', hideMenu)
-$('#list-phones').addEventListener('click', hideMenu)
-header.addEventListener('click', hideMenu)
-$("#total-phone").addEventListener('click', hideMenu)
-
-
-
-// accordion right
-const itemActive = $$('.accordion-desc')
-itemActive.forEach(item => {
-    item.onclick = function() {
-        $('.accordion-desc.active').classList.remove('active')
-        this.classList.add('active')
-    }
-})
-
-
-// pagination
-const pageNumber = $$('.pagination__page-number')
-
-pageNumber.forEach((page, index) => {
-    page.onclick = function() {
-        $('.pagination__page-number.active2').classList.remove('active2')
-
-        page.classList.add('active2')
-    }
-});
-
-
-// handle footer search input
-const footerInput = $('.footer__input')
-const footerInputIconDelete = $('.footer__input-delete')
-
-function handleFooterSearch(e) {
-    const inputValue = e.target.value
-    if(inputValue.length > 0) {
-        footerInputIconDelete.classList.add('display-block')
-    } 
-    if (inputValue.length == 0) {
-        footerInputIconDelete.classList.remove('display-block')
-    }
-}
-function handleFooterDelete() {
-    footerInput.value = ''
-    footerInputIconDelete.classList.remove('display-block')
-    footerInput.focus()
-}
-
-footerInputIconDelete.addEventListener('click', handleFooterDelete)
-footerInput.addEventListener('input', handleFooterSearch)
+    <script src="./index.js"></script>
+</body>
+</html>
