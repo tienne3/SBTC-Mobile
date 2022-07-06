@@ -279,14 +279,14 @@
     margin-right: 15px;
 }
 
-.Sphere {
+/* .Sphere {
     overflow: hidden;
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: -40px;
     margin-bottom: -50px;
-}
+} */
 
 /*  */
 #main {
@@ -400,7 +400,7 @@
     padding: 5px 0 10px;
 }
 
-#list-phones .dt {
+#list-phones .phones {
     text-align: center;
     border: 1px solid rgb(226, 224, 224);
     margin: 15px 0 30px 15px;
@@ -409,14 +409,14 @@
     min-height: 300px;
 }
 
-#list-phones .dt:hover {
+#list-phones .phones:hover {
     box-shadow: 0 10px 20px rgb(0 0 0 / 13%), 0 6px 6px rgb(0 0 0 / 15%);
     border-radius: 4px;
     transition: all .2s ease;
     margin-top: 13px;
 }
 
-#list-phones .dt img {
+#list-phones .phones img {
     max-width: 80%;
     margin: 10px;
     max-height: 70%;
@@ -424,7 +424,7 @@
 }
 
 /*  */
-.dt-name {
+.phones-name {
     font-size: 1.5rem;
     font-weight: 500;
     margin: 5px 10px;
@@ -432,14 +432,14 @@
     line-height: 1.4;
 }
 
-.dt-gia {
+.phones-price {
     font-size: 1.4rem;
     margin: 10px 0 6px;
     font-weight: 600;
     color: var(--primary);
 }
 
-.mua-btn {
+.buy-btn {
     text-decoration: none;
     border: none;
     color: white;
@@ -456,23 +456,23 @@
     cursor: pointer;
 }
 
-.mua-btn:hover {
+.buy-btn:hover {
     opacity: 0.9;
 }
 
-.dt-desc {
+.phones-desc {
     font-size: 1.3rem;
     font-weight: 500;
     margin: 10px;
     line-height: 1.3;
 }
-.dt-more {
+.phones-more {
     color: var(--primary);
     cursor: pointer;
     margin-left: 2px;
     font-size: 1.4rem;
 }
-.dt-more:hover {
+.phones-more:hover {
     opacity: 1.7;
 }
 
@@ -487,7 +487,7 @@
 .list__item-icon {
     display: none;
 }
-.soDT {
+.total-phones {
     display: flex;
     line-height: 44px;
     justify-content: center;
@@ -696,3 +696,4 @@
     margin: 10px 0;
     padding: 0 10px;
 }
+
