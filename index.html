@@ -10,18 +10,17 @@
     <link rel="stylesheet" href="./assets/base.css">
     <link rel="stylesheet" href="./assets/responsive.css">
 
-    <title>SBTC Mobile</title>
+    <title>TheGioiDiDong</title>
 </head>
 
 <body>
     <!-- header -->
     <header id="header">
-
         <nav class="navbar__top">
-            <div class="navbar__list">
-                <ul class="navbar-nav">
-                  <div class="nav-left">
-                    <li class="nav-item border-right cursor-pointer2">Vào cửa hàng trên ứng dụng
+            <div class="navbar__top-list">
+                <ul class="navbar__top-items">
+                  <div class="navbar__top-left">
+                    <li class="navbar__item-link border-right cursor-pointer2">Vào cửa hàng trên ứng dụng
                         <div class="navbar__qr">
                             <img src="./assets/img/qr-code/qr-code.png" alt="QR code" class="navbar__qr-img">
                             <div class="navbar__qr-apps">
@@ -34,25 +33,24 @@
                             </div>
                         </div>
                     </li>
-                    <li class="nav-item">Kết nối
-                        
-                    <i class="navbar__top-icon-left fa-brands fa-facebook"></i>
-                    <i class="navbar__top-icon-left fa-brands fa-instagram"></i>
+                    <li class="navbar__item-link">Kết nối
+                    <i class="navbar__top-left-icon fa-brands fa-facebook"></i>
+                    <i class="navbar__top-left-icon fa-brands fa-instagram"></i>
                     </li>
                 </div>
                 
-                  <div class="nav-right">
-                      <li class="nav-item cursor-pointer">
-                          <i class="navbar__top-icon-right fa-solid fa-cart-shopping"></i>
+                  <div class="navbar__top-right">
+                      <li class="navbar__item-link cursor-pointer">
+                          <i class="navbar__top-right-icon fa-solid fa-cart-shopping"></i>
                         Giỏ hàng</li>
-                      <li class="nav-item cursor-pointer hide-mobile">
-                        <i class="navbar__top-icon-right far fa-bell"></i>  
+                      <li class="navbar__item-link cursor-pointer hide-mobile">
+                        <i class="navbar__top-right-icon far fa-bell"></i>  
                         Thông báo</li>
-                      <li class="nav-item cursor-pointer hide-mobile">
-                        <i class="navbar__top-icon-right far fa-circle-question"></i>
+                      <li class="navbar__item-link cursor-pointer hide-mobile">
+                        <i class="navbar__top-right-icon far fa-circle-question"></i>
                         Trợ giúp</li>
-                      <li class="nav-item cursor-pointer2">
-                      <i class="navbar__top-icon-right fa-solid fa-circle-user"></i>
+                      <li class="navbar__item-link cursor-pointer2">
+                      <i class="navbar__top-right-icon fa-solid fa-circle-user"></i>
                         <span>Vũ Minh Tiến</span>
                         <ul class="nav__account">
                           <li>Tài khoản của tôi</li>
@@ -67,12 +65,12 @@
           </nav>
 
         <!--  -->
-        <div class="nav__bar">
+        <div class="nav__bar-body">
             <img src="./assets/img/background/Logo_NK.svg" alt="" class="logo-nguyenkim">
             <div class="header__input">
-                <input type="text" class="seacrhInput" placeholder="Nhập tên điện thoại">
-                <i class="input__delete">&times;</i>
-                <button id="search">
+                <input type="text" class="navbar__input" placeholder="Nhập tên điện thoại">
+                <i class="input__icon-delete">&times;</i>
+                <button id="navbar__search-btn">
                     <i class="search-icon fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
@@ -87,56 +85,56 @@
     </header>
 
     <!-- content -->
-    <div id="container" class="a">
+    <div id="container">
         <div class="change-img">
             <img src="./assets/img/background-show/banner-xiaomi-12.jpg" alt="" class="show-img">
             <iframe width="362" height="191" src="https://www.youtube.com/embed/zJFwOC_Bv4Y" title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <main id="main">
-            <div id="cottrai" class="cottrai">
+            <div id="left-column">
                 <div id="accordion">
-                    <div class="accordion__fist">
+                    <div class="accordion__left">
                         <i class="accordion-icon fa-solid fa-list-ul"></i>
                             <div>Danh mục sản phẩm</div>
-                        <i class="delete-icon">&times;</i>
+                        <i class="accordion__icon-delete">&times;</i>
                     </div>
 
-                    <div class="cap">Sắp xếp theo giá:</div>
-                    <div class="ct">
-                        <label><input type="checkbox" class="sapxep" value="1">Giá thấp đến cao</label>
-                        <label><input type="checkbox" class="sapxep" value="2">Giá cao đến thấp</label>
+                    <div class="accordion__cap">Sắp xếp theo giá:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="sort" value="1">Giá thấp đến cao</label>
+                        <label><input type="checkbox" class="sort" value="2">Giá cao đến thấp</label>
                     </div>
 
-                    <div class="cap">Thương hiệu:</div>
-                    <div class="ct">
-                        <label><input type="checkbox" class="thuonghieu" value="Iphone">Iphone</label>
-                        <label><input type="checkbox" class="thuonghieu" value="Samsung">Samsung</label>
-                        <label><input type="checkbox" class="thuonghieu" value="Xiaomi">Xiaomi</label>
-                        <label><input type="checkbox" class="thuonghieu" value="Huawei">Huawei</label>
-                        <label><input type="checkbox" class="thuonghieu" value="OPPO">OPPO</label>
-                        <label><input type="checkbox" class="thuonghieu" value="LG">LG</label>
-                        <label><input type="checkbox" class="thuonghieu" value="Vivo">Vivo</label>
+                    <div class="accordion__cap">Thương hiệu:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="brand" value="Iphone">Iphone</label>
+                        <label><input type="checkbox" class="brand" value="Samsung">Samsung</label>
+                        <label><input type="checkbox" class="brand" value="Xiaomi">Xiaomi</label>
+                        <label><input type="checkbox" class="brand" value="Huawei">Huawei</label>
+                        <label><input type="checkbox" class="brand" value="OPPO">OPPO</label>
+                        <label><input type="checkbox" class="brand" value="LG">LG</label>
+                        <label><input type="checkbox" class="brand" value="Vivo">Vivo</label>
                     </div>
-                    <div class="cap">Giá bán:</div>
-                    <div class="ct">
-                        <label><input type="checkbox" class="giaban" value="1">Dưới 5 triệu</label>
-                        <label><input type="checkbox" class="giaban" value="2">Từ 5 đến 10 triệu</label>
-                        <label><input type="checkbox" class="giaban" value="3">Từ 10 đến 15 triệu</label>
-                        <label><input type="checkbox" class="giaban" value="4">Từ 15 đến 20 triệu</label>
-                        <label><input type="checkbox" class="giaban" value="5">Trên 20 triệu</label>
+                    <div class="accordion__cap">Giá bán:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="price" value="1">Dưới 5 triệu</label>
+                        <label><input type="checkbox" class="price" value="2">Từ 5 đến 10 triệu</label>
+                        <label><input type="checkbox" class="price" value="3">Từ 10 đến 15 triệu</label>
+                        <label><input type="checkbox" class="price" value="4">Từ 15 đến 20 triệu</label>
+                        <label><input type="checkbox" class="price" value="5">Trên 20 triệu</label>
                     </div>
-                    <div class="cap">Màn hình:</div>
-                    <div class="ct">
-                        <label><input type="checkbox" class="manhinh" value="1">Dưới 6 inch</label>
-                        <label><input type="checkbox" class="manhinh" value="2">Từ 6 inch trở lên</label>
+                    <div class="accordion__cap">Màn hình:</div>
+                    <div class="accordion__form">
+                        <label><input type="checkbox" class="screen" value="1">Dưới 6 inch</label>
+                        <label><input type="checkbox" class="screen" value="2">Từ 6 inch trở lên</label>
                     </div>
                 </div>
             </div>
 
             <!-- cột phải  -->
-            <div id="cotphai">
-                <div class="accordion__last">
+            <div id="right-column">
+                <div class="accordion__right">
                     <p class="accordion-desc active">
                         <i class="accordion-icon fa-solid fa-truck"></i>
                         Miễn phí vận chuyển</p>
@@ -151,29 +149,30 @@
                         Thương hiệu nổi bật</p>
                 </div>
 
-                <!-- tính tổng đt -->
+                <!-- icon lists -->
                 <div><i class="list__item-icon fa-solid fa-list"></i></div>
                 
+                <!-- tính tổng đt -->
+                <h4 id="total-phone"></h4>
                 <!-- render đt -->
-                <h4 id="soDTduochien"></h4>
-                <div id="list1"> </div>
+                <div id="list-phones"> </div>
                 
             </div>
         </main>
         <ul id="pagination">
-            <li class="prev-pagi"><i class="pagination-icon fa-solid fa-angle-left"></i></li>
+            <li class="prev-pagination"><i class="pagination-icon fa-solid fa-angle-left"></i></li>
             <li class="pagination__page-number active2">1</li>
             <li class="pagination__page-number">2</li>
             <li class="pagination__page-number">3</li>
             <li class="pagination__page-number">4</li>
-            <li class="next-pagi"><i class="pagination-icon fa-solid fa-angle-right"></i></li>
+            <li class="next-pagination"><i class="pagination-icon fa-solid fa-angle-right"></i></li>
         </ul>
     </div>
 
     <!-- footer -->
     <footer id="footer">
-        <div class="footer__colum">
-            <div class="a">
+        <div class="footer__column">
+            <div>
                 <h2 class="footer__heading">
                     <i class="fa-solid fa-location-dot"></i>
                     HỆ THỐNG CỬA HÀNG</h2>
@@ -209,7 +208,7 @@
             </div>
         </div>
 
-        <div class="footer__colum">
+        <div class="footer__column">
             <h2 class="footer__heading">
                 <i class="fa-solid fa-circle-question"></i>
                 QUY ĐỊNH - CHÍNH SÁCH</h2>
@@ -226,7 +225,7 @@
             </ul>
         </div>
 
-        <div class="footer__colum">
+        <div class="footer__column">
             <h2 class="footer__heading">
                 <i class="fa-solid fa-envelope-dot"></i>
                 ĐĂNG KÝ NHẬN BẢNG TIN</h2>
@@ -247,7 +246,7 @@
                         Youtube</p>
                 </div>
         </div>
-        <div class="footer__colum">
+        <div class="footer__column">
             <h2 class="footer__heading">THÔNG TIN KHÁC</h2>
             <div class="footer__other">
                 <p class="footer__orther-desc hover-blue">Email: <br/>
@@ -267,10 +266,10 @@
         </div>
     </footer>
 
-    <div class="footer-after">
-        <p class="footer-after-info">Copyright © 1999 - 2022 Công ty Cổ phần Thương mại Nguyễn Kim.</p>
-        <p class="footer-after-info">Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.</p>
-        <p class="footer-after-info">Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần Hưng Đạo, P. Cầu Ông Lãnh, TP. Hồ Chí Minh</p>
+    <div class="footer__after">
+        <p class="footer__after-info">Copyright © 1999 - 2022 Công ty Cổ phần Thương mại Nguyễn Kim.</p>
+        <p class="footer__after-info">Giấy chứng nhận đăng ký kinh doanh số 0302286281, cấp ngày 22/06/2006 bởi Sở Kế hoạch và Đầu tư TP. Hồ Chí Minh.</p>
+        <p class="footer__after-info">Địa chỉ đăng ký trụ sở chính: 63-65-67 Trần Hưng Đạo, P. Cầu Ông Lãnh, TP. Hồ Chí Minh</p>
 
     </div>
 
