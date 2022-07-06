@@ -1,6 +1,6 @@
 /* mobile */
 @media (max-width: 46.1875em) {
-    .navbar-nav {
+    .navbar__top-items {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -11,7 +11,7 @@
         margin: 0;
     }
 
-    .nav__bar {
+    .nav__bar-body {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -22,20 +22,20 @@
     .navbar__qr {
         margin-top: 0;
     }
-    .nav-left li {
+    .navbar__top-left li {
         margin: 0;
         padding: 6px 15px;
         display: flex;
         justify-content: center;
     }
 
-    .nav-left {
+    .navbar__top-left {
         display: flex;
         justify-content: center;
         margin-top: 5px;
     }
 
-    .nav-right {
+    .navbar__top-right {
         display: flex;
         justify-content: center;
         margin-top: 5px;
@@ -51,7 +51,7 @@
         margin-left: 10px;
     }
 
-    .nav-right li {
+    .navbar__top-right li {
         padding: 6px 15px;
         margin: 0;
     }
@@ -64,7 +64,7 @@
         justify-content: center;
     }
 
-    .seacrhInput {
+    .navbar__input {
         display: flex;
         justify-content: center;
         border-top-left-radius: 4px;
@@ -91,10 +91,10 @@
     }
 
 
-    .accordion__last {
+    .accordion__right {
         display: none;
     }
-    #soDTduochien {
+    #total-phone {
         margin-top: 20px;
     }
     html .list__item-icon {
@@ -109,7 +109,7 @@
     #container {
         padding: 0 10px;
     }
-    #cottrai {
+    #left-column {
         height: 100%;
         display: none;
         position: fixed;
@@ -117,9 +117,9 @@
         top: 0;
         left: 0;
         background-color: #d6ecfa;
-        animation: cottraiFadeIn ease .3s;
+        animation: leftColumnFadeIn ease .3s;
     }
-    @keyframes cottraiFadeIn {
+    @keyframes leftColumnFadeIn {
         from {
             opacity: 0.4;
             transform: translateX(-140px);
@@ -130,13 +130,13 @@
         }
     }
     
-    #accordion .ct label {
+    #accordion .accordion__cap label {
         display: block;
         cursor: pointer;
         font-size: 1.5rem;
         margin: 4px 0 8px 30px;
     }
-    #accordion .cap {
+    #accordion .accordion__cap {
         margin: 0;
         font-size: 1.6rem;
         font-weight: 600;
@@ -148,10 +148,10 @@
         height: 30px;
     }
 
-    #cotphai {
+    #right-column {
         width: 100%;
     }
-    .accordion__fist {
+    .accordion__left {
         background-color: var(--primary2);
         font-size: 1.6rem;
         font-weight: 500;
@@ -162,21 +162,21 @@
         cursor: pointer;
         height: 44px;
     }
-    .delete-icon {
+    .accordion__icon-delete {
         display: block;
         font-size: 4rem;
         padding: 14px 14px 14px 18px;
     }
 
-    #list1 {
+    #list-phones {
         display: grid;
         grid-template-columns: 50% 50%;
     }
 
-    #list1 .dt {
+    #list-phones .dt {
         margin: 15px 5px 30px 5px;
     }
-    #list1 .dt img {
+    #list-phones .dt img {
         margin: 10px 0 0 0;
     }
 
@@ -194,7 +194,7 @@
         display: grid;
         grid-template-columns: 100%;
     }
-    .footer__colum {
+    .footer__column {
         padding: 40px 10px 0px;
     }
 
@@ -214,7 +214,7 @@
         padding: 0 48px;
         margin: 0 33px;
     }
-    #list1 {
+    #list-phones {
         display: grid;
         grid-template-columns: 33.333% 33.333% 33.333%;
     }
@@ -238,14 +238,14 @@
         padding: 0 44px;
         margin: 0;
     }
-    .nav-left li {
+    .navbar__top-left li {
         margin-right: 10px;
     }
-    .nav-right li {
+    .navbar__top-right li {
         margin-left: 10px;
     }
 
-    .nav__bar {
+    .nav__bar-body {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -259,7 +259,7 @@
         margin: 10px auto;
     }
 
-    .seacrhInput {
+    .navbar__input {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
     }
@@ -272,28 +272,28 @@
         flex-wrap: wrap;
     }
     /*  */
-    .accordion__last {
+    .accordion__right {
         display: none;
     }
-    #cottrai {
+    #left-column {
         width: 25%;
     }
-    #cotphai {
+    #right-column {
         width: 75%;
     }
 
     /*  */
-    #accordion .ct label {
+    #accordion .accordion__cap label {
         display: block;
         cursor: pointer;
         font-size: 1.5rem;
         margin:  8px 0 8px 20px;
     }
 
-    .accordion__fist {
+    .accordion__left {
         font-size: 1.5rem;
     }
-    #accordion .cap {
+    #accordion .accordion__cap {
         margin: 15px 0 0;
         font-size: 1.8rem;
         font-weight: 600;
@@ -331,7 +331,7 @@
 }
 
 @media (min-width: 48em) and (max-width: 51.25em) {
-    .nav__bar {
+    .nav__bar-body {
         height: 130px;
         margin-top: 0;
     }
@@ -340,14 +340,14 @@
         display: none !important;
     }
 
-    .nav-left li {
+    .navbar__top-left li {
         margin: 0;
         padding: 6px 15px;
         display: flex;
         justify-content: center;
     }
 
-    .nav-right li {
+    .navbar__top-right li {
         margin: 0;
         padding: 6px 15px;
         display: flex;
