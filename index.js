@@ -61,7 +61,7 @@ changeBackground = () => {
 setInterval(changeBackground, 4000);
 
 ///////
-const arrDT = [
+const arrPhones = [
     {
         phoneName: 'OPPO Reno8 Pro',
         price: 18300000,
@@ -326,14 +326,19 @@ function renderDT(brand_arr=[], price_arr=[], screen_arr=[]) {
     let totalPhone = 0
     const listPhones = document.getElementById('list-phones')
     listPhones.innerHTML = ''
-    for (var i = 0; i < arrDT.length; i++) {
-        phoneName = arrDT[i].phoneName;
-        pricePhone = arrDT[i].price;
-        phonePrice = arrDT[i].phonePrice;
-        imagePhone = arrDT[i].imagePhone;
-        brandDT = arrDT[i].brand;
-        screenPhone = arrDT[i].screen;
+    for (var i = 0; i < arrPhones.length; i++) {
+        phoneName = arrPhones[i].phoneName;
+        pricePhone = arrPhones[i].price;
+        phonePrice = arrPhones[i].phonePrice;
+        imagePhone = arrPhones[i].imagePhone;
+        brandDT = arrPhones[i].brand;
+        screenPhone = arrPhones[i].screen;
 
+
+        // lọc thương hiệu đc chọn
+        if (brand_arr.length > 0) {
+            if (brand_arr.includes(brandDT) == false) continue
+        } 
 
         // lọc thương hiệu đc chọn
         if (brand_arr.length > 0) {
@@ -371,14 +376,13 @@ function renderDT(brand_arr=[], price_arr=[], screen_arr=[]) {
         </div>
         `
     }
-    $('#total-phone').innerHTML = ` 
-    <div class='total-phones'>${totalPhone} Sản phẩm</div>`
+    $('#total-phone').innerHTML = `<div class='total-phones'>${totalPhone} Sản phẩm</div>`
 }
 renderDT()
 
 
 /////
-function chonDT() {
+function choosePhone() {
     // xem chọn thương hiệu nào
     const arr1 = document.getElementsByClassName('brand')
     const brand_arr = []
@@ -404,7 +408,7 @@ function chonDT() {
 }
 
 arr = $$('#accordion input')
-for (i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
+for (i = 0; i < arr.length; i++) arr[i].addEventListener('change', choosePhone)
 
 
 
@@ -476,10 +480,3 @@ function handleFooterDelete() {
 
 footerInputIconDelete.addEventListener('click', handleFooterDelete)
 footerInput.addEventListener('input', handleFooterSearch)
-
-
-
-
-
-
-
