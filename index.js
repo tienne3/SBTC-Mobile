@@ -1,7 +1,46 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-///
+
+// handle search input
+const searchInput = $('.navbar__input')
+const inputIconDelete = $('.input__icon-delete')
+
+function handleSearch(e) {
+    const inputValue = e.target.value
+    if(inputValue.length > 0) {
+        inputIconDelete.classList.add('display-block')
+    } 
+    if (inputValue.length == 0) {
+        inputIconDelete.classList.remove('display-block')
+    }
+}
+function handleDeleteValue() {
+    searchInput.value = ''
+    inputIconDelete.classList.remove('display-block')
+    searchInput.focus()
+}
+
+inputIconDelete.addEventListener('click', handleDeleteValue)
+searchInput.addEventListener('input', handleSearch)
+
+
+//// search sản phẩm
+searchInput.addEventListener('input', function(e) {  
+    let valueSearch = e.target.value.trim().toLowerCase()
+    let listPhones = document.querySelectorAll('.phones')
+
+    listPhones.forEach(item => {
+        if (item.innerText.toLowerCase().includes(valueSearch)) {
+            item.classList.remove('display-none')
+        } else {
+            item.classList.add('display-none')
+        }
+    })
+})
+
+
+/// change background
 const changeImgs = $('.change-img')
 const imgTag = $('.show-img')
 var index = 1
@@ -12,6 +51,7 @@ const imgs = [
     'assets/img/background-show/banner-redmi-k50-gaming-2.png',
     'assets/img/background-show/banner-samsung-galaxy-s20-series.jpg',
 ]   
+
 changeBackground = () => {
     imgTag.setAttribute('src', imgs[index])
     index++
@@ -21,422 +61,421 @@ changeBackground = () => {
 setInterval(changeBackground, 4000);
 
 ///////
-var arrDT = [
+const arrDT = [
     {
-        tenDT: 'OPPO Reno8 Pro',
-        gia: 18300000,
-        giaTien: '18,300,000',
-        hinh: './assets/img/oppo-reno-8pro-vang.jpg',
-        thuonghieu: 'OPPO',
-        manhinh: '6'
+        phoneName: 'OPPO Reno8 Pro',
+        price: 18300000,
+        phonePrice: '18,300,000',
+        imagePhone: './assets/img/oppo-reno-8pro-vang.jpg',
+        brand: 'OPPO',
+        screen: '6'
     },
     {
-        tenDT: 'Nubia Red Magic 7',
-        gia: 13950000,
-        giaTien: '13,950,000',
-        hinh: './assets/img/nubia-red-magic-7-trong-suot.jpg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '6.2'
+        phoneName: 'Nubia Red Magic 7',
+        price: 13950000,
+        phonePrice: '13,950,000',
+        imagePhone: './assets/img/nubia-red-magic-7-trong-suot.jpg',
+        brand: 'Xiaomi',
+        screen: '5.8'
     },
     {
-        tenDT: 'iPhone 13 Pro Chính hãng VN/A',
-        gia: 26750000 ,
-        giaTien: '26,750,000',
-        hinh: './assets/img/iphone-13-pro-xanh.jpg',
-        thuonghieu: 'Apple',
-        manhinh: '6'
+        phoneName: 'iPhone 13 Pro Chính hãng VN/A',
+        price: 26750000 ,
+        phonePrice: '26,750,000',
+        imagePhone: './assets/img/iphone-13-pro-xanh.jpg',
+        brand: 'Iphone',
+        screen: '6.2'
     },
     {
-        tenDT: 'Xiaomi POCO F4 GT',
-        gia: 19550000,
-        giaTien: '19,550,000',
-        hinh: './assets/img/poco-f4-gt-vang.jpg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '6.3'
+        phoneName: 'Xiaomi POCO F4 GT',
+        price: 19550000,
+        phonePrice: '19,550,000',
+        imagePhone: './assets/img/poco-f4-gt-vang.jpg',
+        brand: 'Xiaomi',
+        screen: '6.3'
     },
     {
-        tenDT: 'OPPO Reno6 Z',
-        gia: 7550000,
-        giaTien: '7,550,000',
-        hinh: './assets/img/oppo-reno-6z-b.jpg',
-        thuonghieu: 'OPPO',
-        manhinh: '6'
+        phoneName: 'OPPO Reno6 Z',
+        price: 7550000,
+        phonePrice: '7,550,000',
+        imagePhone: './assets/img/oppo-reno-6z-b.jpg',
+        brand: 'OPPO',
+        screen: '5.9'
     },
     {
-        tenDT: 'Huawei Honor Magic V',
-        gia: 27550000,
-        giaTien: '27,550,000',
-        hinh: './assets/img/honor-magic-v-3-2.jpg',
-        thuonghieu: 'OPPO',
-        manhinh: '6'
+        phoneName: 'Huawei Honor Magic V',
+        price: 27550000,
+        phonePrice: '27,550,000',
+        imagePhone: './assets/img/honor-magic-v-3-2.jpg',
+        brand: 'Huawei',
+        screen: '6'
     },
     {
-        tenDT: 'iPhone 11 cũ (64GB, 128GB)',
-        gia: 12500000 ,
-        giaTien: '12,500,000',
-        hinh: './assets/img/iphone-11-tim.jpg',
-        thuonghieu: 'Apple',
-        manhinh: '5.1'
+        phoneName: 'iPhone 11 cũ (64GB, 128GB)',
+        price: 12500000 ,
+        phonePrice: '12,500,000',
+        imagePhone: './assets/img/iphone-11-tim.jpg',
+        brand: 'Iphone',
+        screen: '5.8'
     },
     {
-        tenDT: 'Vivo iQOO Z5 (Snap 778G)',
-        gia: 6650000,
-        giaTien: '6,650,000',
-        hinh: './assets/img/vivo-iqoo-z5-den.jpg',
-        thuonghieu: 'Vivo',
-        manhinh: '5.8'
+        phoneName: 'Vivo iQOO Z5 (Snap 778G)',
+        price: 6650000,
+        phonePrice: '6,650,000',
+        imagePhone: './assets/img/vivo-iqoo-z5-den.jpg',
+        brand: 'Vivo',
+        screen: '5.8'
     },
     {
-        tenDT: 'Samsung Galaxy S20 cũ (Hàn Quốc, Mỹ)',
-        gia: 6950000,
-        giaTien: '6,950,000',
-        hinh: './assets/img/galaxy-s20-cu-xam.png',
-        thuonghieu: 'Samsung',
-        manhinh: '5.3'
+        phoneName: 'Samsung Galaxy S20 cũ (Hàn Quốc, Mỹ)',
+        price: 6950000,
+        phonePrice: '6,950,000',
+        imagePhone: './assets/img/galaxy-s20-cu-xam.png',
+        brand: 'Samsung',
+        screen: '5.3'
     },
     {
-        tenDT: 'iPhone 12 Nhật Bản (Mới 100%)',
-        gia: 12950000,
-        giaTien: '12,950,000',
-        hinh: './assets/img/iphone-12-chinh-hang-blue.jpg',
-        thuonghieu: 'Apple',
-        manhinh: '5.8'
+        phoneName: 'iPhone 12 Nhật Bản (Mới 100%)',
+        price: 18950000,
+        phonePrice: '18,950,000',
+        imagePhone: './assets/img/iphone-12-chinh-hang-blue.jpg',
+        brand: 'Iphone',
+        screen: '5.7'
     },
     {
-        tenDT: 'iPhone XS Max Cũ (64GB, 256GB)',
-        gia: 7950000 ,
-        giaTien: '7,950,000',
-        hinh: './assets/img/iphone-xs-max-vang.jpg',
-        thuonghieu: 'Apple',
-        manhinh: '5.5'
+        phoneName: 'iPhone XS Max Cũ (64GB, 256GB)',
+        price: 7950000 ,
+        phonePrice: '7,950,000',
+        imagePhone: './assets/img/iphone-xs-max-vang.jpg',
+        brand: 'Iphone',
+        screen: '6'
     },
     {
-        tenDT: 'Xiaomi 11T 5G (Chính hãng DGW)',
-        gia: 8150000 ,
-        giaTien: '8,150,000',
-        hinh: './assets/img/mi-11t-xanh.jpeg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '5.9'
+        phoneName: 'Xiaomi 11T 5G (Chính hãng DGW)',
+        price: 8150000 ,
+        phonePrice: '8,150,000',
+        imagePhone: './assets/img/mi-11t-xanh.jpeg',
+        brand: 'Xiaomi',
+        screen: '5.9'
     },
     {
-        tenDT: 'OPPO Find X5 Pro',
-        gia: 21950000,
-        giaTien: '21,950,000',
-        hinh: './assets/img/oppo-find-x5-pro-trang.jpg',
-        thuonghieu: 'OPPO',
-        manhinh: '5.9'
+        phoneName: 'OPPO Find X5 Pro',
+        price: 21950000,
+        phonePrice: '21,950,000',
+        imagePhone: './assets/img/oppo-find-x5-pro-trang.jpg',
+        brand: 'OPPO',
+        screen: '5.9'
     },
     {
-        tenDT: 'LG Velvet',
-        gia: 4250000,
-        giaTien: '4,250,000',
-        hinh: './assets/img/lg-velvet-den.jpg',
-        thuonghieu: 'LG',
-        manhinh: '5.6'
+        phoneName: 'LG Velvet',
+        price: 4250000,
+        phonePrice: '4,250,000',
+        imagePhone: './assets/img/lg-velvet-den.jpg',
+        brand: 'LG',
+        screen: '5.6'
     },
     {
-        tenDT: 'Xiaomi Redmi Note 11 Pro (Bản China)',
-        gia: 5950000,
-        giaTien: '5,950,000',
-        hinh: './assets/img/redmi-note-11-pro-xanh-rung-sau.jpg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '6.1'
+        phoneName: 'Xiaomi Redmi Note 11 Pro (Bản China)',
+        price: 5950000,
+        phonePrice: '5,950,000',
+        imagePhone: './assets/img/redmi-note-11-pro-xanh-rung-sau.jpg',
+        brand: 'Xiaomi',
+        screen: '6.1'
     },
     {
-        tenDT: 'Huawei Honor 70 Pro',
-        gia: 8950000,
-        giaTien: '8,950,000',
-        hinh: './assets/img/honor-70-pro-plus-gold.jpg',
-        thuonghieu: 'Huawei',
-        manhinh: '6.1'
+        phoneName: 'Huawei Honor 70 Pro',
+        price: 8950000,
+        phonePrice: '8,950,000',
+        imagePhone: './assets/img/honor-70-pro-plus-gold.jpg',
+        brand: 'Huawei',
+        screen: '6.1'
     },
     {
-        tenDT: 'OPPO Reno6 5G (Chính hãng)',
-        gia: 9750000 ,
-        giaTien: '9,750,000',
-        hinh: './assets/img/oppo-reno6-bac-1-dai-dien.jpg',
-        thuonghieu: 'OPPO',
-        manhinh: '6.2'
+        phoneName: 'OPPO Reno6 5G (Chính hãng)',
+        price: 9750000 ,
+        phonePrice: '9,750,000',
+        imagePhone: './assets/img/oppo-reno6-bac-1-dai-dien.jpg',
+        brand: 'OPPO',
+        screen: '6.2'
     },
     {
-        tenDT: 'Samsung Galaxy A53 5G (Chính hãng)',
-        gia: 7950000 ,
-        giaTien: '7,950,000',
-        hinh: './assets/img/samsung-galaxy-a53-5g-8.jpg',
-        thuonghieu: 'Samsung',
-        manhinh: '5.8'
+        phoneName: 'Samsung Galaxy A53 5G (Chính hãng)',
+        price: 7950000 ,
+        phonePrice: '7,950,000',
+        imagePhone: './assets/img/samsung-galaxy-a53-5g-8.jpg',
+        brand: 'Samsung',
+        screen: '5.8'
     },
     {
-        tenDT: 'Samsung Galaxy A90 5G (Snap 855)',
-        gia: 4850000,
-        giaTien: '4,850,000',
-        hinh: './assets/img/samsung-galaxy-a90-5g-den.jpg',
-        thuonghieu: 'Samsung',
-        manhinh: '5.7'
+        phoneName: 'Samsung Galaxy A90 5G (Snap 855)',
+        price: 4850000,
+        phonePrice: '4,850,000',
+        imagePhone: './assets/img/samsung-galaxy-a90-5g-den.jpg',
+        brand: 'Samsung',
+        screen: '5.7'
     },
     {
-        tenDT: 'LG V50s ThinQ ',
-        gia: 3850000 ,
-        giaTien: '3,850,000 ',
-        hinh: './assets/img/lg-v50-cu.jpg',
-        thuonghieu: 'LG',
-        manhinh: '5.8'
+        phoneName: 'LG V50s ThinQ ',
+        price: 3850000 ,
+        phonePrice: '3,850,000 ',
+        imagePhone: './assets/img/lg-v50-cu.jpg',
+        brand: 'LG',
+        screen: '5.8'
     },
     {
-        tenDT: 'Samsung Galaxy M51 Chính hãng',
-        gia: 5350000,
-        giaTien: '5,350,000',
-        hinh: './assets/img/samsung-galaxy-m51-trang.png',
-        thuonghieu: 'Samsung',
-        manhinh: '6'
+        phoneName: 'Samsung Galaxy M51 Chính hãng',
+        price: 5350000,
+        phonePrice: '5,350,000',
+        imagePhone: './assets/img/samsung-galaxy-m51-trang.png',
+        brand: 'Samsung',
+        screen: '6'
     },
     {
-        tenDT: 'iPhone 13 Chính hãng VN/A',
-        gia: 21600000,
-        giaTien: '21,600,000',
-        hinh: './assets/img/iphone-13-xanh.jpg',
-        thuonghieu: 'Apple',
-        manhinh: '6.2'
+        phoneName: 'iPhone 13 Chính hãng VN/A',
+        price: 21600000,
+        phonePrice: '21,600,000',
+        imagePhone: './assets/img/iphone-13-xanh.jpg',
+        brand: 'Iphone',
+        screen: '6.2'
     },
     {
-        tenDT: 'Samsung Galaxy S20 Plus cũ (Hàn Quốc)',
-        gia: 7950000,
-        giaTien: '7,950,000',
-        hinh: './assets/img/samsung-galaxy-s20-plus-cu-cloud-blue.jpg',
-        thuonghieu: 'Samsung',
-        manhinh: '6.2'
+        phoneName: 'Samsung Galaxy S20 Plus cũ (Hàn Quốc)',
+        price: 7950000,
+        phonePrice: '7,950,000',
+        imagePhone: './assets/img/samsung-galaxy-s20-plus-cu-cloud-blue.jpg',
+        brand: 'Samsung',
+        screen: '6.2'
     },
     {
-        tenDT: 'Huawei Honor Magic 4',
-        gia: 23450000,
-        giaTien: '23,450,000',
-        hinh: './assets/img/honor-magic-4-vang.jpg',
-        thuonghieu: 'Huawei',
-        manhinh: '6.2'
+        phoneName: 'Huawei Honor Magic 4',
+        price: 23450000,
+        phonePrice: '23,450,000',
+        imagePhone: './assets/img/honor-magic-4-vang.jpg',
+        brand: 'Huawei',
+        screen: '6.2'
     },
     {
-        tenDT: 'Huawei Honor 70 Pro Plus',
-        gia: 15950000,
-        giaTien: '15,950,000',
-        hinh: './assets/img/honor-70-pro-trang.png',
-        thuonghieu: 'Huawei',
-        manhinh: '6.4'
+        phoneName: 'Huawei Honor 70 Pro Plus',
+        price: 15950000,
+        phonePrice: '15,950,000',
+        imagePhone: './assets/img/honor-70-pro-trang.png',
+        brand: 'Huawei',
+        screen: '6.4'
     },
     {
-        tenDT: 'LG V60 ThinQ',
-        gia: 5950000,
-        giaTien: '5,950,000',
-        hinh: './assets/img/lg-v60-xanh.jpg',
-        thuonghieu: 'LG',
-        manhinh: '6.2'
+        phoneName: 'LG V60 ThinQ',
+        price: 5950000,
+        phonePrice: '5,950,000',
+        imagePhone: './assets/img/lg-v60-xanh.jpg',
+        brand: 'LG',
+        screen: '6.2'
     },
     {
-        tenDT: 'Samsung Galaxy S21 Ultra cũ (Hàn Quốc)',
-        gia: 14250000,
-        giaTien: '14,250,000',
-        hinh: './assets/img/samsung-galaxy-s21-ultra-cu-den.jpg',
-        thuonghieu: 'Samsung',
-        manhinh: '6.3'
+        phoneName: 'Samsung Galaxy S21 Ultra cũ (Hàn Quốc)',
+        price: 14250000,
+        phonePrice: '14,250,000',
+        imagePhone: './assets/img/samsung-galaxy-s21-ultra-cu-den.jpg',
+        brand: 'Samsung',
+        screen: '6.3'
     },
     {
-        tenDT: 'Xiaomi 12 (Snap 820 Gen 1)',
-        gia: 15850000,
-        giaTien: '15,850,000',
-        hinh: './assets/img/xiaomi-12-xanh-bac-ha.jpg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '6'
+        phoneName: 'Xiaomi 12 (Snap 820 Gen 1)',
+        price: 15850000,
+        phonePrice: '15,850,000',
+        imagePhone: './assets/img/xiaomi-12-xanh-bac-ha.jpg',
+        brand: 'Xiaomi',
+        screen: '6'
     },
     {
-        tenDT: 'Xiaomi Redmi Note 11 (Chính hãng)',
-        gia: 13650000,
-        giaTien: '13,650,000',
-        hinh: './assets/img/xiaomi-redmi-note-11-ngoc-trai.jpg',
-        thuonghieu: 'Xiaomi',
-        manhinh: '5.9'
+        phoneName: 'Xiaomi Redmi Note 11 (Chính hãng)',
+        price: 13650000,
+        phonePrice: '13,650,000',
+        imagePhone: './assets/img/xiaomi-redmi-note-11-ngoc-trai.jpg',
+        brand: 'Xiaomi',
+        screen: '5.9'
     },
     {
-        tenDT: 'Huawei Honor 60 SE',
-        gia: 7950000,
-        giaTien: '7,950,000',
-        hinh: './assets/img/honor-60-se-5g-xanh.jpg',
-        thuonghieu: 'Huawei',
-        manhinh: '5.9'
+        phoneName: 'Huawei Honor 60 SE',
+        price: 7950000,
+        phonePrice: '7,950,000',
+        imagePhone: './assets/img/honor-60-se-5g-xanh.jpg',
+        brand: 'Huawei',
+        screen: '5.9'
     },
     {
-        tenDT: 'Vivo iQOO Neo 5 Lite (Snap 870)',
-        gia: 6750000,
-        giaTien: '6,750,000',
-        hinh: './assets/img/vivo-iqoo-neo-5-lite-3.jpg',
-        thuonghieu: 'Vivo',
-        manhinh: '5.6'
+        phoneName: 'Vivo iQOO Neo 5 Lite (Snap 870)',
+        price: 6750000,
+        phonePrice: '6,750,000',
+        imagePhone: './assets/img/vivo-iqoo-neo-5-lite-3.jpg',
+        brand: 'Vivo',
+        screen: '5.6'
     },
     {
-        tenDT: 'LG G8 ThinQ',
-        gia: 4450000,
-        giaTien: '4,450,000',
-        hinh: './assets/img/lg-g8-xanh.jpg',
-        thuonghieu: 'LG',
-        manhinh: '5.6'
+        phoneName: 'LG G8 ThinQ',
+        price: 4450000,
+        phonePrice: '4,450,000',
+        imagePhone: './assets/img/lg-g8-xanh.jpg',
+        brand: 'LG',
+        screen: '5.6'
     },
 ]
 
-//////// phân trang
-// let currentPage = 1
-// let perPage = 16
-// let totalPage = arrDT.length / 16
-// let perUser = []
-
-// perUser = arrDT.splice(
-//     (currentPage - 1) * perPage,
-//     (currentPage - 1) * perPage + perPage
-// )
-
-// function renderPageNumber() {
-    
-// }
 
 // hàm render điện thoai
-function renderDT(thuonghieuchon_arr=[], giaban_arr=[], manhinh_arr=[], sapxep_arr=[]) {
-    let soDTduochien = 0
-    const list1 = document.getElementById('list1')
-    list1.innerHTML = ''
+function renderDT(brand_arr=[], price_arr=[], screen_arr=[]) {
+    let totalPhone = 0
+    const listPhones = document.getElementById('list-phones')
+    listPhones.innerHTML = ''
     for (var i = 0; i < arrDT.length; i++) {
-        tenDT = arrDT[i].tenDT;
-        giaDT = arrDT[i].gia;
-        giaTien = arrDT[i].giaTien;
-        hinh = arrDT[i].hinh;
-        thuonghieuDT = arrDT[i].thuonghieu;
-        manhinhDT = arrDT[i].manhinh;
+        phoneName = arrDT[i].phoneName;
+        pricePhone = arrDT[i].price;
+        phonePrice = arrDT[i].phonePrice;
+        imagePhone = arrDT[i].imagePhone;
+        brandDT = arrDT[i].brand;
+        screenPhone = arrDT[i].screen;
 
-        // if(arrDT.length >= 16) {
-        //     arrDT.length = 16
-        // }
 
         // lọc thương hiệu đc chọn
-        if (thuonghieuchon_arr.length > 0) {
-            if (thuonghieuchon_arr.includes(thuonghieuDT) == false) {
-                continue
-            }
-        }
+        if (brand_arr.length > 0) {
+            if (brand_arr.includes(brandDT) == false) continue
+        } 
 
         // lọc theo giá bán
-        if (giaban_arr.length > 0) {
-            if (giaDT < 5000000 && giaban_arr.includes('1') == false) continue
-            if (giaDT >= 5000000 && giaDT < 10000000 && giaban_arr.includes('2') == false) continue
-            if (giaDT >= 10000000 && giaDT < 15000000 && giaban_arr.includes('3') == false) continue
-            if (giaDT >= 15000000 && giaDT < 20000000 && giaban_arr.includes('4') == false) continue
-            if (giaDT >= 20000000 && giaban_arr.includes('5') == false) continue
+        if (price_arr.length > 0) {
+            if (pricePhone < 5000000 && price_arr.includes('1') == false) continue
+            if (pricePhone >= 5000000 && pricePhone < 10000000 && price_arr.includes('2') == false) continue
+            if (pricePhone >= 10000000 && pricePhone < 15000000 && price_arr.includes('3') == false) continue
+            if (pricePhone >= 15000000 && pricePhone < 20000000 && price_arr.includes('4') == false) continue
+            if (pricePhone >= 20000000 && price_arr.includes('5') == false) continue
         }
         
         // lọc theo màn hình
-        if (manhinh_arr.length > 0) {
-            if (Number(manhinhDT) < 6 && manhinh_arr.includes('1') == false) continue
-            if (Number(manhinhDT) >= 6 && manhinh_arr.includes('2') == false) continue
+        if (screen_arr.length > 0) {
+            if (Number(screenPhone) < 6 && screen_arr.includes('1') == false) continue
+            if (Number(screenPhone) >= 6 && screen_arr.includes('2') == false) continue
         }
 
-        // sắp xếp theo giá
-        if (sapxep_arr.length > 0) {
-            if (arrDT.sort((a, b) => - a.gia + b.gia) && sapxep_arr.includes('1') == false) renderDT() 
-            if (arrDT.sort((a, b) =>  a.gia - b.gia) && sapxep_arr.includes('2') == false) renderDT()
-        }
-        
-        soDTduochien++
 
-        // render list dt
-        list1.innerHTML += `
-        <div class='dt'>
-        <img src='${hinh}' class='dt-img'>
-        <h3 class='dt-name'>${tenDT}</h3>
-        <h4 class='dt-gia'>${giaTien}đ - ${manhinhDT}: Inch</h4>
-        <button class='mua-btn'>Mua</button>
-        <p class='dt-desc'>Tặng: <span class="active">Cường lực - Ốp lưng - Tai nghe</span> khi mua BHV
+        totalPhone++
+
+        // render list phones
+        listPhones.innerHTML += `
+        <div class='phones'>
+        <img src='${imagePhone}' class='phones-img'>
+        <h3 class='phones-name'>${phoneName}</h3>
+        <h4 class='phones-price'>${phonePrice}đ - ${screenPhone} Inch</h4>
+        <button class='buy-btn'>Mua</button>
+        <p class='phones-desc'>Tặng: <span class="active">Cường lực - Ốp lưng - Tai nghe</span> khi mua BHV
         <br/>
-        Giảm thêm: <span class="active">100K</span> áp dụng HSSV mua BHV tại cửa hàng. <span class='dt-more'>Chi tiết...</span></p>
+        Giảm thêm: <span class="active">100K</span> áp dụng HSSV mua BHV tại cửa hàng. <span class='phones-more'>Chi tiết...</span></p>
         </div>
         `
     }
-    $('#soDTduochien').innerHTML = ` 
-    <div class='soDT'>${soDTduochien} Sản phẩm</div>`
+    $('#total-phone').innerHTML = ` 
+    <div class='total-phones'>${totalPhone} Sản phẩm</div>`
 }
 renderDT()
+
 
 /////
 function chonDT() {
     // xem chọn thương hiệu nào
-    const arr1 = document.getElementsByClassName('thuonghieu')
-    const thuonghieuchon_arr = []
+    const arr1 = document.getElementsByClassName('brand')
+    const brand_arr = []
     for (i = 0; i < arr1.length; i++) {
-        if (arr1[i].checked) thuonghieuchon_arr.push(arr1[i].value)
+        if (arr1[i].checked) brand_arr.push(arr1[i].value)
     }
 
     // xem chọn khoảng giá nào
-    const arr2 = document.getElementsByClassName('giaban')
-    const giaban_arr = []
+    const arr2 = document.getElementsByClassName('price')
+    const price_arr = []
     for (i = 0; i < arr2.length; i++) {
-        if (arr2[i].checked) giaban_arr.push(arr2[i].value)
+        if (arr2[i].checked) price_arr.push(arr2[i].value)
     }
 
     // xem chọn màn hình khoảng nào
-    const arr3 = document.getElementsByClassName('manhinh')
-    const manhinh_arr = []
+    const arr3 = document.getElementsByClassName('screen')
+    const screen_arr = []
     for (i = 0; i < arr3.length; i++) {
-        if (arr3[i].checked) manhinh_arr.push(arr3[i].value)
+        if (arr3[i].checked) screen_arr.push(arr3[i].value)
     }
 
-    const arr4 = document.getElementsByClassName('sapxep')
-    const sapxep_arr = []
-    for (i = 0; i < arr4.length; i++) {
-        if (arr4[i].checked) sapxep_arr.push(arr4[i].value)
-    }
-
-    renderDT(thuonghieuchon_arr, giaban_arr, manhinh_arr,sapxep_arr)
+    renderDT(brand_arr, price_arr, screen_arr)
 }
 
 arr = $$('#accordion input')
-for (var i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
+for (i = 0; i < arr.length; i++) arr[i].addEventListener('change', chonDT)
 
-
-// // search input
-// const seacrhInput = document.querySelector('.seacrhInput')
-// function searchItem() {
-//     const valueItem = seacrhInput.value
-//     const timkiemDT_arr = []
-
-//     Array.from(valueItem).forEach(function() {
-//         if (valueItem) timkiemDT_arr.push(valueItem)
-//     })
-
-//     renderDT(timkiemDT_arr)
-// }
-// seacrhInput.addEventListener('keyup', searchItem)
 
 
 // nav bars
 const menuBtn = $('.list__item-icon')
-const cottrai = $('#cottrai')
-const hideBtn = $('.delete-icon')
+const leftColumn = $('#left-column')
+const hideBtn = $('.accordion__icon-delete')
 const header = $('#header')
 
-// hàm mở menu
+// hàm mở menu leftColumn
 function handleMenu() {
-    cottrai.classList.add('display-block')
+    leftColumn.classList.add('display-block')
 }
 
-// hàm đóng menu
-function deleteMenu() {
-    cottrai.classList.remove('display-block')
+// hàm đóng menu leftColumn
+function hideMenu() {
+    leftColumn.classList.remove('display-block')
 }
-
 
 menuBtn.addEventListener('click', handleMenu)
 //
-hideBtn.addEventListener('click', deleteMenu)
-list1.addEventListener('click', deleteMenu)
-header.addEventListener('click', deleteMenu)
-$("#soDTduochien").addEventListener('click', deleteMenu)
+hideBtn.addEventListener('click', hideMenu)
+$('#list-phones').addEventListener('click', hideMenu)
+header.addEventListener('click', hideMenu)
+$("#total-phone").addEventListener('click', hideMenu)
 
 
 
+// accordion right
+const itemActive = $$('.accordion-desc')
+itemActive.forEach(item => {
+    item.onclick = function() {
+        $('.accordion-desc.active').classList.remove('active')
+        this.classList.add('active')
+    }
+})
+
+
+// pagination
+const pageNumber = $$('.pagination__page-number')
+
+pageNumber.forEach((page, index) => {
+    page.onclick = function() {
+        $('.pagination__page-number.active2').classList.remove('active2')
+
+        page.classList.add('active2')
+    }
+});
+
+
+// handle footer search input
+const footerInput = $('.footer__input')
+const footerInputIconDelete = $('.footer__input-delete')
+
+function handleFooterSearch(e) {
+    const inputValue = e.target.value
+    if(inputValue.length > 0) {
+        footerInputIconDelete.classList.add('display-block')
+    } 
+    if (inputValue.length == 0) {
+        footerInputIconDelete.classList.remove('display-block')
+    }
+}
+function handleFooterDelete() {
+    footerInput.value = ''
+    footerInputIconDelete.classList.remove('display-block')
+    footerInput.focus()
+}
+
+footerInputIconDelete.addEventListener('click', handleFooterDelete)
+footerInput.addEventListener('input', handleFooterSearch)
 
 
 
