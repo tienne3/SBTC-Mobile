@@ -1,0 +1,17 @@
+@media (max-width: 46.1875em) { 
+
+    #register {
+        width: 90%;
+    }
+
+    .register-bot {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-desc {
+        line-height: 2;
+    }
+}
+

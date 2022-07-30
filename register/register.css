@@ -104,7 +104,7 @@
 .form-control span {
     position: absolute;
     width: 0%;
-    top: 52px;
+    top: 54px;
     left: 0;
     border-bottom: 2px solid var(--succses-color);
     transition: .3s;
