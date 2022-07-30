@@ -1,0 +1,145 @@
+.after1::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 1px;
+    height: 15px;
+    background-color: #fff;
+    left: 0;
+    top: 7px;
+}
+
+#container {
+    min-height: 400px;
+}
+
+.title {
+    color: var(--primary);
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+#login {
+    position: relative;
+    margin-top: 50px !important;
+    width: 380px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/*  */
+.form-control {
+    width: 100%;
+    position: relative;
+}
+
+.form-control span {
+    position: absolute;
+    width: 0%;
+    top: 52px;
+    left: 0;
+    border-bottom: 2px solid var(--succses-color);
+    transition: .3s;
+}
+
+#login input:focus ~ span {
+    width: 100%;
+}
+
+#login.error small {
+    color: var(--error-color);
+}
+
+#login.error input {
+    border-bottom: 2px solid var(--error-color);
+}
+
+/*  */
+.heading {
+    color: var(--primary2);
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+
+/* form */
+.form-control-input {
+    width: 100%;
+    height: 40px;
+    background: #f0f2f5;
+    padding-left: 15px;
+    border: none;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid #f0f2f5 !important;
+    outline: none;
+    margin: 15px 0 5px 0;
+    font-size: 1.4rem;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-control.error small {
+    color: var(--error-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.form-control.error input {
+    border-bottom: 2px solid var(--error-color);
+}
+
+/*  */
+.btn-login {
+    width: 100%;
+    height: 65px;
+    background: linear-gradient(180deg, #fa9d4d 0%, #f87f41 100%);
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 26px;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+}
+
+.login-bot {
+    display: flex;
+    justify-content: space-between;
+}
+.login-desc {
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #3e3e3e;
+}
+
+.register-now {
+    text-decoration: none;
+    margin-left: 5px;
+    color: #03aef0;
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+
+.register-now:hover,
+.remember-passwork:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.remember-passwork {
+    font-weight: normal;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #3e3e3e;
+}

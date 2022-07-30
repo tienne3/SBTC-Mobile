@@ -143,6 +143,10 @@
         }
     }
     
+    .Sphere {
+        display: none;
+    }
+
     #accordion .accordion__cap label {
         display: block;
         cursor: pointer;
@@ -196,6 +200,22 @@
     .phones-price {
         font-size: 1.4rem;
         margin: 0 0 6px;
+    }
+
+    .price1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .price-desc {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin-top: -8px;
+        margin-left: 3px;
+        color: var(--primary);
+        font-size: 1.6rem;
     }
 
     .phones-name {
@@ -262,9 +282,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 150px;
-        padding: 0 10px;
-        margin: 10px 0 0;
+        height: 120px;
+        padding: 0 10px 20px;
     }
     .logo-nguyenkim {
         display: flex;
@@ -306,6 +325,14 @@
     #left-column {
         width: 25%;
     }
+
+    .Sphere {
+        display: flex;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.2rem;
+    }
+
     #right-column {
         width: 75%;
     }

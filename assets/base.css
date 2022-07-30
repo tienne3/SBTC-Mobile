@@ -1,6 +1,13 @@
 :root {
     --primary: #fe0000;
     --primary2: #c69a39;
+
+    --succses-color: #2691d9;
+    --error-color: #e74c3c;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -25,24 +32,9 @@ html *::-webkit-scrollbar {
     width: 8px;
 }
 
-html *::-webkit-scrollbar {
-    border-radius: 0;
-    width: 8px;
-}
-
 html *::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgb(198,154,57, 0.8);
-}
-
-html *::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgb(198,154,57, 0.8);
-}
-
-html *::-webkit-scrollbar-track {
-    border-radius: 0;
-    background-color: rgba(0, 0, 0, 0);
 }
 
 html *::-webkit-scrollbar-track {
@@ -92,9 +84,6 @@ html {
     cursor: pointer;
 }
 
-.cursor-pointer:hover {
-    opacity: 0.8;
-}
 
 .cursor-pointer2 {
     cursor: pointer;
@@ -102,4 +91,8 @@ html {
 
 .cursor-pointer2:hover > span {
     opacity: 0.8;
+}
+
+a[href] {
+    text-decoration: none;
 }

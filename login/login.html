@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="./assets/font-icon/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css"
+      href="/assets/font-icon/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/main.css" />
-    <link rel="stylesheet" href="./assets/gird.css" />
-    <link rel="stylesheet" href="./assets/base.css" />
-    <link rel="stylesheet" href="./assets/responsive.css" />
+    <link rel="stylesheet" href="/login/login.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/gird.css" />
+    <link rel="stylesheet" href="/assets/base.css" />
+    <link rel="stylesheet" href="/assets/responsive.css" />
 
     <title>TheGioiDiDong</title>
   </head>
@@ -27,21 +28,21 @@
                 Vào cửa hàng trên ứng dụng
                 <div class="navbar__qr">
                   <img
-                    src="./assets/img/qr-code/qr-code.png"
+                    src="/assets/img/qr-code/qr-code.png"
                     alt="QR code"
                     class="navbar__qr-img"
                   />
                   <div class="navbar__qr-apps">
                     <span class="navbar__qr-link">
                       <img
-                        src="./assets/img/qr-code/app-store.png"
+                        src="/assets/img/qr-code/app-store.png"
                         alt="App store"
                         class="navbar__qr-download-img"
                       />
                     </span>
                     <span class="navbar__qr-link">
                       <img
-                        src="./assets/img/qr-code/google-play.png"
+                        src="/assets/img/qr-code/google-play.png"
                         alt="Google play"
                         class="navbar__qr-download-img"
                       />
@@ -57,25 +58,10 @@
             </div>
 
             <div class="navbar__top-right">
-              <li class="navbar__item-link cursor-pointer">
+              <!-- <li class="navbar__item-link cursor-pointer" id="cart">
                 <i class="navbar__top-right-icon fa-solid fa-cart-shopping"></i>
                 Giỏ hàng
-                <div id="cart">
-                  <h1 class="cart-heading">Giỏ hàng của bạn</h1>
-                  <div class="cart__tablet">
-                    <span class="tablet-desc">Sản phẩm</span>
-                    <span class="tablet-desc">Tên</span>
-                    <span class="tablet-desc">Chọn</span>
-                  </div>
-                  <p class="cart-empty">Chưa có sản phẩm nào</p>
-                  <div id="cart-list"></div>
-                  <div><button class="reload-price">Cập nhật</button></div>
-                  <div class="cart__bottom">
-                    <p class="cart-total"></p>
-                    <a href="/" class="cart-buy">Thanh toán</a>
-                  </div>
-                </div>
-              </li>
+              </li> -->
               <li class="navbar__item-link cursor-pointer hide-mobile">
                 <i class="navbar__top-right-icon far fa-bell"></i>
                 Thông báo
@@ -84,11 +70,11 @@
                 <i class="navbar__top-right-icon far fa-circle-question"></i>
                 Trợ giúp
               </li>
-              <li class="navbar__item-link cursor-pointer form">
-                <a href="./login/login.html"> Đăng nhập </a>
+              <li class="navbar__item-link cursor-pointer">
+                <a href="/login/login.html"> Đăng nhập </a>
               </li>
-              <li class="navbar__item-link cursor-pointer form form2">
-                <a href="./register/register.html"> Đăng ký </a>
+              <li class="navbar__item-link cursor-pointer after1">
+                <a href="/register/register.html"> Đăng ký </a>
               </li>
             </div>
           </ul>
@@ -99,7 +85,7 @@
       <div class="nav__bar-body">
         <a href="/index.html">
           <img
-            src="./assets/img/background/Logo_NK.svg"
+            src="/assets/img/background/Logo_NK.svg"
             alt=""
             class="logo-nguyenkim"
         /></a>
@@ -124,169 +110,52 @@
       </div>
     </header>
 
-    <!-- toast msg -->
-    <div class="toast"></div>
-
-    <!-- hiện nút khi scroll -->
-    <div>
-      <a href="#header" class="go-to-top">
-        <i class="fa-solid fa-arrow-up go-to-top-icon"></i>
-      </a>
-    </div>
-
     <!-- content -->
     <div id="container">
-      <div class="change-img">
-        <img
-          src="./assets/img/background-show/banner-xiaomi-12.jpg"
-          alt=""
-          class="show-img"
-        />
-        <iframe
-          width="362"
-          height="191"
-          src="https://www.youtube.com/embed/zJFwOC_Bv4Y"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <main id="main">
-        <div id="left-column">
-          <div id="accordion">
-            <div class="accordion__left">
-              <i class="accordion-icon fa-solid fa-list-ul"></i>
-              <div>Danh mục sản phẩm</div>
-              <i class="accordion__icon-delete">&times;</i>
-            </div>
+      <!-- form login -->
+      <h4 class="title">Đăng nhập</h4>
 
-            <!-- thương hiệu -->
-            <div class="accordion__cap">Thương hiệu:</div>
-            <div class="accordion__form">
-              <label
-                ><input
-                  type="checkbox"
-                  class="brand"
-                  value="Iphone"
-                />IPHONE</label
-              >
-              <label
-                ><input
-                  type="checkbox"
-                  class="brand"
-                  value="Samsung"
-                />SAMSUNG</label
-              >
-              <label
-                ><input
-                  type="checkbox"
-                  class="brand"
-                  value="Xiaomi"
-                />XIAOMI</label
-              >
-              <label
-                ><input
-                  type="checkbox"
-                  class="brand"
-                  value="Huawei"
-                />HUAWEI</label
-              >
-              <label
-                ><input type="checkbox" class="brand" value="OPPO" />OPPO</label
-              >
-              <label
-                ><input type="checkbox" class="brand" value="LG" />LG</label
-              >
-              <label
-                ><input type="checkbox" class="brand" value="Vivo" />VIVO</label
-              >
-            </div>
-            <!-- giá bán -->
-            <div class="accordion__cap">Giá bán:</div>
-            <div class="accordion__form">
-              <label
-                ><input type="checkbox" class="price" value="1" />Dưới 5
-                triệu</label
-              >
-              <label
-                ><input type="checkbox" class="price" value="2" />Từ 5 đến 10
-                triệu</label
-              >
-              <label
-                ><input type="checkbox" class="price" value="3" />Từ 10 đến 15
-                triệu</label
-              >
-              <label
-                ><input type="checkbox" class="price" value="4" />Từ 15 đến 20
-                triệu</label
-              >
-              <label
-                ><input type="checkbox" class="price" value="5" />Trên 20
-                triệu</label
-              >
-            </div>
+      <form action="">
+        <div id="login">
+          <h3 class="heading">NguyenKim</h3>
 
-            <!-- màn hình -->
-            <div class="accordion__cap">Màn hình:</div>
-            <div class="accordion__form">
-              <label
-                ><input type="checkbox" class="screen" value="1" />Dưới 6
-                inch</label
-              >
-              <label
-                ><input type="checkbox" class="screen" value="2" />Từ 6 inch trở
-                lên</label
-              >
-            </div>
-            <div class="sph">
-              <p class="Sphere"></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- cột phải  -->
-        <div id="right-column">
-          <div class="accordion__right">
-            <p class="accordion-desc active">
-              <i class="accordion-icon fa-solid fa-truck"></i>
-              Miễn phí vận chuyển
-            </p>
-            <p class="accordion-desc">
-              <i class="accordion-icon fa-solid fa-book"></i>
-              Cẩm nang khuyến mãi
-            </p>
-            <p class="accordion-desc">
-              <i class="accordion-icon fa-solid fa-basket-shopping"></i>
-              Hướng dẫn mua hàng online
-            </p>
-            <p class="accordion-desc">
-              <i class="accordion-icon fa-solid fa-medal"></i>
-              Thương hiệu nổi bật
-            </p>
+          <!--  -->
+          <div class="form-control">
+            <input
+              id="enter-username"
+              class="form-control-input"
+              type="text"
+              placeholder="Tên đăng nhập/ Email/ Số điện thoại"
+            />
+            <small></small>
+            <span></span>
           </div>
 
-          <!-- icon lists -->
-          <div><i class="list__item-icon fa-solid fa-list"></i></div>
+          <!-- passwork -->
+          <div class="form-control">
+            <input
+              id="enter-password"
+              class="form-control-input"
+              type="password"
+              placeholder="Mật khẩu"
+            />
+            <small></small>
+            <span></span>
+          </div>
 
-          <!-- tính tổng đt -->
-          <h4 id="total-phone"></h4>
-          <!-- render đt -->
-          <div id="list-phones"></div>
+          <button class="btn-login">ĐĂNG NHẬP</button>
+          <div class="login-bot">
+            <p class="login-desc">
+              Chưa có tài khoản
+
+              <a href="/register/register.html" class="register-now"
+                >( Đăng kí ngay )</a
+              >
+            </p>
+            <p class="remember-passwork">Quên mật khẩu ?</p>
+          </div>
         </div>
-      </main>
-      <ul id="pagination">
-        <li class="prev-pagination">
-          <i class="pagination-icon fa-solid fa-angle-left"></i>
-        </li>
-        <li class="pagination__page-number active2">1</li>
-        <li class="pagination__page-number">2</li>
-        <li class="pagination__page-number">3</li>
-        <li class="pagination__page-number">4</li>
-        <li class="next-pagination">
-          <i class="pagination-icon fa-solid fa-angle-right"></i>
-        </li>
-      </ul>
+      </form>
     </div>
 
     <!-- footer -->
@@ -374,7 +243,9 @@
         </h2>
         <div class="footer__search-input">
           <input
-            type="search"
+            type="text"
+            name=""
+            id=""
             placeholder="Nhập email của bạn"
             class="footer__input"
           />
@@ -439,33 +310,6 @@
         TP. Hồ Chí Minh
       </p>
     </div>
-
-    <script src="./index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
-
-    <script>
-      const Texts = [
-        "Apple",
-        "Xiaomi",
-        "Samsung",
-        "OPPO",
-        "Vivo",
-        "LG",
-        "Nokia",
-        "Huawei",
-        "Vertu",
-        "Vsmart",
-      ];
-      var tagCloud = TagCloud(".Sphere", Texts, {
-        radius: 150,
-        maxSpeed: "normal",
-        initSpeed: "fast",
-        direction: 135,
-        keep: true,
-      });
-
-      var color = "#blue";
-      document.querySelector(".Sphere").style.color = color;
-    </script>
+    <script src="./login.js"></script>
   </body>
 </html>

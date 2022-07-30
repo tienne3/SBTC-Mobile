@@ -1,0 +1,10 @@
+#container {
+    min-height: 400px;
+}
+
+#container .title {
+    color: var(--primary);
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 2rem;
+}
