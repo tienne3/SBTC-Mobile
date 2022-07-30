@@ -393,7 +393,7 @@ function renderDT(brand_arr = [], price_arr = [], screen_arr = []) {
           <a href="/phone/thong-tin-san-pham.html">
           <h3 class='phones-name'>${phoneName}</h3>
           </a>
-            <div class='price1'>
+            <div class='price-product'>
               <div><h4 class='phones-price'>${phonePrice}</div>
               <div class='price-desc'> đ</div>
               </h4>
@@ -558,9 +558,13 @@ function listCart(productImg, productName, productPrice) {
       <div class="cart__product">
       <img src=${productImg} class="cart__phone-img"> 
       <h2 class="cart__phone-name">${productName}</h2> 
-  
+      
         <div class="cart__right">
-          <p class="cart__phone-price">${productPrice} </p>
+          <div class='price-cart'>
+            <div><p class="cart__phone-price">${productPrice} </p></div>
+            <div class='price-desc-cart'> đ</div>
+          </div>
+
           <input type="number" value=${value1} min="1" class="product-quantily">
           <button class="cart__delete-icon">Xóa</button>
         </div>

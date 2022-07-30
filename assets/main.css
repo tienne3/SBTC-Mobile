@@ -691,21 +691,37 @@
     font-weight: 600;
     color: var(--primary);
 }
-.price1 {
+.price-product {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .price-desc {
-    /* display: flex; */
-    /* align-items: center; */
+    display: flex;
+    align-items: center;
     font-weight: 600;
     margin-top: 2px;
     margin-left: 3px;
     color: var(--primary);
     font-size: 1.6rem;
 }
+
+.price-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price-desc-cart {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-left: 3px;
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
 
 .add-cart {
     text-decoration: none;
