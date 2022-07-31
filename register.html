@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="../assets/font-icon/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css"
+      href="./assets/font-icon/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css"
     />
-    <link rel="stylesheet" href="./login.css" />
-    <link rel="stylesheet" href="../assets/main.css" />
-    <link rel="stylesheet" href="../assets/gird.css" />
-    <link rel="stylesheet" href="../assets/base.css" />
-    <link rel="stylesheet" href="../assets/responsive.css" />
-    <link rel="stylesheet" href="./responsive-login.css" />
+    <link rel="stylesheet" href="./register/register.css" />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="./assets/gird.css" />
+    <link rel="stylesheet" href="./assets/base.css" />
+    <link rel="stylesheet" href="./assets/responsive.css" />
+    <link rel="stylesheet" href="./register/responsive-register.css">
 
     <title>TheGioiDiDong</title>
   </head>
@@ -29,21 +29,21 @@
                 Vào cửa hàng trên ứng dụng
                 <div class="navbar__qr">
                   <img
-                    src="../assets/img/qr-code/qr-code.png"
+                    src="./assets/img/qr-code/qr-code.png"
                     alt="QR code"
                     class="navbar__qr-img"
                   />
                   <div class="navbar__qr-apps">
                     <span class="navbar__qr-link">
                       <img
-                        src="../assets/img/qr-code/app-store.png"
+                        src="./assets/img/qr-code/app-store.png"
                         alt="App store"
                         class="navbar__qr-download-img"
                       />
                     </span>
                     <span class="navbar__qr-link">
                       <img
-                        src="../assets/img/qr-code/google-play.png"
+                        src="./assets/img/qr-code/google-play.png"
                         alt="Google play"
                         class="navbar__qr-download-img"
                       />
@@ -72,10 +72,10 @@
                 Trợ giúp
               </li>
               <li class="navbar__item-link cursor-pointer">
-                <a href="/login/login.html"> Đăng nhập </a>
+                <a href="./login.html"> Đăng nhập </a>
               </li>
               <li class="navbar__item-link cursor-pointer after1">
-                <a href="/register/register.html"> Đăng ký </a>
+                <a href="./register.html"> Đăng ký </a>
               </li>
             </div>
           </ul>
@@ -84,9 +84,9 @@
 
       <!--  -->
       <div class="nav__bar-body">
-        <a href="/index.html">
+        <a href="/">
           <img
-            src="../assets/img/background/Logo_NK.svg"
+            src="./assets/img/background/Logo_NK.svg"
             alt=""
             class="logo-nguyenkim"
         /></a>
@@ -113,50 +113,72 @@
 
     <!-- content -->
     <div id="container">
-      <!-- form login -->
-      <h4 class="title">Đăng nhập</h4>
+      <h4 class="title">Đăng ký</h4>
 
+      <!-- form register -->
       <form action="">
-        <div id="login">
-          <h3 class="heading">NguyenKim</h3>
-
+      <div id="register">
+        <h3 class="heading">NguyenKim</h3>
+        <div class="form__register">
           <!--  -->
-          <div class="form-control">
-            <input
-              id="enter-username"
-              class="form-control-input"
-              type="text"
-              placeholder="Tên đăng nhập/ Email/ Số điện thoại"
-            />
-            <small></small>
-            <span></span>
+            <div class="form-control">
+              <input
+                id="username"
+                class="form-control-input"
+                type="text"
+                placeholder="Tên đăng nhập"
+              />
+              <small></small>
+              <span></span>
+            </div>
+
+            <!--  -->
+            <div class="form-control">
+              <input
+                id="email"
+                class="form-control-input"
+                type="text"
+                placeholder="Email/ Số điện thoại"
+              />
+              <small></small>
+              <span></span>
+            </div>
+
+            <!--  -->
+            <div class="form-control">
+              <input
+                id="password"
+                class="form-control-input"
+                type="password"
+                placeholder="Mật khẩu"
+              />
+              <small></small>
+              <span></span>
+            </div>
+
+            <div class="form-control">
+              <input
+                id="confirm-password"
+                class="form-control-input"
+                type="password"
+                placeholder="Nhập lại mật khẩu"
+              />
+              <small></small>
+              <span></span>
+            </div>
+            <button class="btn-register">TIẾP TỤC</button>
+            
+            <!--  -->
           </div>
-
-          <!-- passwork -->
-          <div class="form-control">
-            <input
-              id="enter-password"
-              class="form-control-input"
-              type="password"
-              placeholder="Mật khẩu"
-            />
-            <small></small>
-            <span></span>
-          </div>
-
-          <button class="btn-login">ĐĂNG NHẬP</button>
-          <div class="login-bot">
-            <p class="login-desc">
-              Chưa có tài khoản
-
-              <a href="/register/register.html" class="register-now"
-                >( Đăng kí ngay )</a
-              >
+          <div class="register-bot">
+            <p class="register-desc">
+              Bạn đã có tài khoản
+              
+              <a href="./login.html" class="register-now">( Đăng nhập)</a>
             </p>
-            <p class="remember-passwork">Quên mật khẩu ?</p>
-          </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
 
     <!-- footer -->
@@ -311,6 +333,7 @@
         TP. Hồ Chí Minh
       </p>
     </div>
-    <script src="./login.js"></script>
+
+    <script src="./register.js"></script>
   </body>
 </html>
