@@ -389,8 +389,8 @@ function renderDT(brand_arr = [], price_arr = [], screen_arr = []) {
     // render list phones
     listPhones.innerHTML += `
         <div class='phones'>
-          <a href="/phone/thong-tin-san-pham.html"><img src='${imagePhone}' class='phones-img'></a>
-          <a href="/phone/thong-tin-san-pham.html">
+          <a href="./thong-tin-san-pham.html"><img src='${imagePhone}' class='phones-img'></a>
+          <a href="./thong-tin-san-pham.html">
           <h3 class='phones-name'>${phoneName}</h3>
           </a>
             <div class='price-product'>
@@ -403,7 +403,7 @@ function renderDT(brand_arr = [], price_arr = [], screen_arr = []) {
           <p class='phones-desc'>Tặng: <span class="active">Cường lực - Ốp lưng - Tai nghe</span> khi mua BHV
           <br/>
           Giảm thêm: <span class="active">100K</span> áp dụng HSSV mua BHV tại cửa hàng. 
-          <a href="/phone/thong-tin-san-pham.html"><span class='phones-more'>Chi tiết...</span></a>
+          <a href="./thong-tin-san-pham.html"><span class='phones-more'>Chi tiết...</span></a>
           </p>
         </div>
       `;
