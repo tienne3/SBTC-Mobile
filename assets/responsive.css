@@ -199,7 +199,7 @@
         z-index: 1;
     }
     #left-column {
-        z-index: 20;
+        z-index: 19;
         height: 100%;
         display: none;
         position: fixed;
