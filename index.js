@@ -546,6 +546,9 @@ function listCart(productImg, productName, productPrice) {
       return;
     }
   }
+  // setTimeout(() => {
+  //   toastMsg.remove();
+  // }, 3000);
 
   // ẩn class cart-empty
   if (cartItems.length > -1) {

@@ -117,7 +117,6 @@
 }
 
 .navbar__item-link {
-    z-index: 2;
     position: relative;
     margin: 0 4px;
     font-size: 1.4rem;
@@ -136,7 +135,7 @@
     color: #000;
     background-color: #fff;
     border-radius: 4px;
-    z-index: 12;
+    z-index: 8;
     left: -100px;
     top: calc(100% + 6px);
     min-width: 400px;
@@ -524,6 +523,7 @@
 
 /* container */
 #container {
+    z-index: 1;
     width: 1364px !important;
     max-width: 100%;
     padding: 0 66px;
@@ -630,6 +630,7 @@
 }
 
 .accordion__right {
+    z-index: 1;
     cursor: pointer;
     border-top: 1px solid #000;
     height: 44px;
@@ -663,12 +664,14 @@
 
 /*  */
 #list-phones {
+    z-index: 1;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     padding: 5px 0 10px;
 }
 
 #list-phones .phones {
+    z-index: 1;
     text-align: center;
     border: 1px solid rgb(226, 224, 224);
     margin: 15px 0 30px 15px;
